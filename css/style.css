@@ -19,12 +19,15 @@ body {
 
 a {
     text-decoration: none;
+}
 
+li {
+    list-style-type: none;
 }
-.container {
-    width: 90%;
+/*.container {
+    width: 1500px;
     margin: 0 auto;
-}
+}*/
 
 .button {
     background-color: #00A0FF;
@@ -92,4 +95,60 @@ header {
 
 .navbar ul a:not(.button):hover {
     border-bottom: 2px solid #323232;
+}
+
+/*Footer*/
+footer {
+    background-color: #323232;
+}
+
+.footer-main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-main .logo h2{
+    color: white;
+}
+
+.footer-main .logo a:hover{
+    transform: none;
+}
+
+.footer-links {
+    margin: 0px 0 40px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.footer-links ul {
+    margin: 0 50px;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 9pt;
+    font-weight: 200;
+}
+
+.footer-links li {
+    color: white;
+    font-size: 10 pt;
+    margin: 2px 0;
+}
+
+.footer-bar {
+    position: relative;
+    bottom: 15px;
+}
+
+.footer-bar p {
+    text-align: center;
+    color: white;
+    font-size: 8pt;
+    opacity: 0.8;
 }
