@@ -12,7 +12,11 @@
     padding: 0;
     color: #323232;
 }
-
+.mbajtsi{
+    width:100%;
+    height: 100%;
+    margin: 0 auto;
+}
 body {
     background-color: #F4F5F9;
 }
@@ -24,14 +28,10 @@ a {
 li {
     list-style-type: none;
 }
-
-.wrapper {
-    margin-right: auto;
-    margin-left:  auto;
-    max-width: 960px;
-    padding-right: 10px;
-    padding-left:  10px;
-}
+/*.container {
+    width: 1500px;
+    margin: 0 auto;
+}*/
 
 .button {
     background-color: #00A0FF;
@@ -69,6 +69,8 @@ header {
     align-items: center;
     flex-wrap: wrap;
     overflow: hidden;
+    width:100%;
+    min-height:10x;    
 }
 
 .logo, .navbar {
@@ -110,82 +112,84 @@ header {
 .navbar ul a:not(.button):hover {
     border-bottom: 2px solid #323232;
 }
-
-
-
-/*Produktet me te kerkuara*/
-.block {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 250px;
-    margin: 200px 0;
+/*Main*/
+#main{
+    min-height: 40px;
+    width:100%;
 }
-
-.block img{
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
+/*Footer*/
+footer {
+    
+    background-color: #323232;
 }
-
-.image-1:hover,
-.image-2:hover,
-.image-3:hover,
-.image-4:hover,
-.image-5:hover {
-    cursor: pointer;
-    transform: scale(1.03);
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+#footer{
+    position: static;
+    margin-bottom: 0;
+    bottom:0;
+    width:100%;
+    height:auto;
 }
-
-.image-1,
-.image-2,
-.image-3,
-.image-4,
-.image-5 {
-    border: 2px solid black;
-}
-
-.box-1, .box-2 {
-    width: 49%;
-    height: 250px;
-}
-
-.box-1 {
-    display: flex;
-    justify-content: center;
-}
-
-.image-1, .image-2{
-    width: 50%;
-}
-
-.box-2 {
+.footer-main {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.box-2-1, .box-2-2 {
-    height: 50%;
+.footer-main .logo h2{
+    color: white;
 }
 
-.image-5{
-    height: 100%;
+.footer-main .logo a:hover{
+    transform: none;
 }
 
-.box-2-1 {
+.footer-links {
+    margin: 0px 0 40px 0;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.footer-links ul {
+    margin: 0 50px;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 9pt;
+    font-weight: 200;
+}
+
+.footer-links li {
+    color: white;
+    font-size: 10 pt;
+    margin: 2px 0;
+}
+
+.footer-bar {
+    position: relative;
+    bottom: 15px;
+}
+
+.footer-bar p {
+    text-align: center;
+    color: white;
+    font-size: 8pt;
+    opacity: 0.8;
 }
 
 
 /* products card */
 .card{
     position: relative;
-    width: 320px;
-    height: 420px;
+    width: 240px;
+    height: 300px;
     background-color: #005180;
     border-radius: 20px;
     overflow: hidden;
+    margin: 5%;
 }
 .card::before{
     content: '';
@@ -269,7 +273,7 @@ header {
 
 /*Login Content*/
 .login-page-main {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -283,7 +287,6 @@ header {
     display: flex;
     flex-direction: column;
     padding: 20px 15px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .login-card h2{
@@ -333,56 +336,24 @@ header {
     border-bottom: 1px solid #0081CC;
 }
 
-/*Footer*/
-footer {
-    background-color: #323232;
-    width: 100%;
-    overflow: hidden;
-    padding: 30px 0;
+#produktet-e-kerkuara{
+    padding: 2% 5%;
+}
+#produktet-e-kerkuara ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+
+}
+#produktet-e-kerkuara ul li{
+    list-style: none;
+    margin-left: 20px;
 }
 
-.footer-main {
-    display: flex;
-    flex-direction: column;
-}
-
-footer .logo {
+.slider{
+    width: 100% !important;
+    padding: 0;
     margin: 0;
-    align-self: center;
-}
-
-footer .logo h2{
-    color: white;
-}
-
-footer .logo a:hover{
-    transform: none;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 40px 0;
-}
-
-
-.footer-links a {
-    color: white;
-    font-size: 9pt;
-    font-weight: 200;
-}
-
-.footer-links li {
-    color: white;
-    font-weight: 600;
-    font-size: 10 pt;
-    margin: 2px 0;
-}
-
-.footer-bar p {
-    text-align: center;
-    color: white;
-    font-size: 8pt;
-    opacity: 0.9;
 }
