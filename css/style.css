@@ -46,13 +46,24 @@ li {
 }
 
 .divider {
-    width: 150px;
+    width: 100px;
     height: 3px;
     background-color: #00A0FF;
     border: 0;
     border-radius: 5px;
     padding: 0;
     margin: 0;
+}
+
+.section-title {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title h3{
+    padding-bottom: 15px;
 }
 
 /*Header*/
@@ -114,9 +125,61 @@ header {
     min-height: 40px;
     width:100%;
 }
+
+/*Produktet me te kerkuara*/
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.block img {
+    height: 400px;
+    width: 400px;
+    margin-top: 10px;
+}
+
+.block img:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*Brendet*/
+.brendet {
+    display: flex;
+    justify-content: space-around;
+    background-color: #005180;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10%;
+}
+
+.brendet img {
+    height: 30px;
+    margin: 30px 15px;
+    filter: brightness(0) invert(1);
+}
+
+.brendet img:first-child, img:nth-child(5) {
+    height: 50px;
+}
+
+.brendet img:nth-child(2), img:nth-child(4) {
+    height: 40px;
+}
+
+.brendet img:hover {
+    filter: none;
+    transform: scale(1.05);
+    transition: transform .4s ease;
+}
+
+
 /*Footer*/
 footer {
-    
     background-color: #323232;
 }
 #footer{
@@ -394,8 +457,8 @@ footer {
 
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
@@ -405,4 +468,19 @@ footer {
 
 .dot:hover {
     background-color: #717171;
+}
+
+/* Tablets and under 
+@media(max-width: 768px){
+    .brendet {
+        flex-direction: column;
+    }
+}*/
+
+
+/* Mobile */
+@media(max-width: 500px){
+    .brendet {
+        flex-direction: column;
+    }
 }
