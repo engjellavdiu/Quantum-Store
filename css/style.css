@@ -139,6 +139,7 @@ header {
     height: 400px;
     width: 400px;
     margin-top: 10px;
+    border-radius: 3px;
 }
 
 .block img:hover {
@@ -247,7 +248,7 @@ footer {
     width: 240px;
     height: 300px;
     background-color: #005180;
-    border-radius: 20px;
+    border-radius: 3px;
     overflow: hidden;
     margin: 5%;
 }
@@ -410,6 +411,18 @@ footer {
 #produktet-e-kerkuara ul li{
     list-style: none;
     margin-left: 20px;
+}
+
+#shiko-te-gjitha {
+    text-align: center;
+}
+
+#shiko-te-gjitha a{
+    color: #005180;
+}
+
+#shiko-te-gjitha a:hover{
+    text-decoration: underline;
 }
 
 /*Slideshow*/
