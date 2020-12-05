@@ -1,173 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Ballina</title>
 </head>
+
 <body>
     <!--Pjesa e headerit me logo dhe navbar-->
     <div class="mbajtsi">
         <header>
             <div class="header-main">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.svg" alt="">
-                    <h2>Quantum<span>store</span></h2>
-                </a>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="">
+                        <h2>Quantum<span>store</span></h2>
+                    </a>
+                </div>
+                <div class="navbar">
+                    <ul>
+                        <li><a href="index.html" class="active">Ballina</a></li>
+                        <li><a href="#">Produktet</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="login.html" class="button">Login</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar">
+        </header>
+
+        <main id="main">
+            <!--Slideshow-->
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="images/slideri/3-ps5-slider.png">
+                </div>
+                <div class="slide">
+                    <img src="images/slideri/2-xbox-slider.png">
+                </div>
+                <div class="slide">
+                    <img src="images/slideri/1-asus-slider.png">
+                </div>
+                <div class="slide">
+                    <img src="images/slideri/0-apple-slider.png">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+            <!-- 1 random card for testing -->
+            <div id="produktet-e-kerkuara">
+
+
                 <ul>
-                    <li><a href="index.html" class="active">Ballina</a></li>
-                    <li><a href="#">Produktet</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                    <li><a href="login.html"  class="button">Login</a></li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
             </div>
-        </div>
-        </header>
-        <main id="main">
-            <!-- 1 random card for testing -->
-        <div id="produktet-e-kerkuara">
-
-        
-            <ul>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-                <li>
-                    <div class="card">
-                        <div class="imageC">
-                            <img src="images/hyperx-cloud2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <h3>HyperX Cloud 2</h3>
-                            <h2 class="price">$89.99</h2>
-                            <a href="#" class="addToCart">Add To Cart</a>
-                        </div>
-                    </div> 
-                </li>
-
-            </ul>
-        </div>
         </main>
 
         <!--Footer-->
@@ -212,5 +240,7 @@
             </div>
         </footer>
     </div>
+    <script src="script/script.js"></script>
 </body>
+
 </html>
