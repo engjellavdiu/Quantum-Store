@@ -402,6 +402,7 @@ footer {
 }
 #produktet-e-kerkuara ul{
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         flex-flow: row wrap;
         margin-right: -15px;
@@ -410,7 +411,8 @@ footer {
 }
 #produktet-e-kerkuara ul li{
     list-style: none;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #shiko-te-gjitha {
