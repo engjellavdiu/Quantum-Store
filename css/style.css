@@ -518,4 +518,67 @@ footer {
     max-width: 20%;
     height: auto;
     background: transparent;
-  }
+}
+
+.mbajtsi-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+#box-left{
+    background-color: white;
+    margin-left: 50px;
+    height: auto;
+    width: 500px;
+    border-radius: 3px;
+    
+}
+#box-right{
+    background-color: white;
+    margin-right: 50px;
+    height: 400px;
+    width: 500px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px 15px; 
+}
+#box-right input[type=email], input[type=text]{
+    height: 30px;
+    border: 1px solid #a0a0a0;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+#box-right input[type=text1]{
+    height: 100px;
+    border: 1px solid #a0a0a0;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+#box-right input[type=submit]{
+    height: 30px;
+
+    margin-top: 20px;
+    border: 1px solid #a0a0a0;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+#box-right label{
+    margin-top: 15px;
+}
+
+#map{
+    height: 300px;
+    width: 500px;
+}
+#teksti h2{
+    color:#323232;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}

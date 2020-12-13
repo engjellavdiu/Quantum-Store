@@ -80,3 +80,15 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+function initMap(){
+  const location = {lat: 42.55819435339477, lng: 21.13469795767178};
+  const map = new google.maps.Map(document.getElementById("map"),{
+    zoom: 100,
+    center: location,
+  });
+  const marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+}
