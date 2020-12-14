@@ -25,39 +25,37 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 }
 
-// login-register
-function changeForm(number){
-  var divElements = document.getElementsByClassName('forms');
-  console.log(divElements)
-  if (number == 0){
-    //show Login
-    divElements[0].classList.remove('hidden')
-    divElements[0].classList.add('form-style')
-    //hide Register
-    divElements[1].classList.add('hidden')
-    divElements[1].classList.remove('form-style')
-  }  
-  else if (number == 1){
-    //show register
-    divElements[1].classList.remove('hidden')
-    divElements[1].classList.add('form-style')
-    //hide login
-    divElements[0].classList.add('hidden')
-    divElements[0].classList.remove('form-style')
-  } 
-}
-function validate(number){
-var inputList = document.getElementsByClassName("input");
-if (number == 0){
-//login side
-  if(inputList[0].value == "" || inputList[1].value == ""){
-    alert("please fill your data")
+/*Login/register form exchange*/
+function changeForm(number) {
+  var llogariaDiv = document.getElementsByClassName('llogaria-main');
+  var divs = document.getElementsByClassName('form');
+  if (number == 0) {
+    //decrease area height
+    for (var i = 0; i < llogariaDiv.length; i++){
+      llogariaDiv[i].style.height="80vh";
     }
-}
-else if(number == 1){
-    //register side
+    //show login
+    //hide register
+    divs[0].classList.add('form-style');
+    divs[0].classList.remove('hidden');
+
+    divs[1].classList.add('hidden');
+    divs[1].classList.remove('form-style');
   }
-}   
+  else if (number == 1) {
+    //increase area height
+    for (var i = 0; i < llogariaDiv.length; i++){
+      llogariaDiv[i].style.height="90vh";
+    }
+    //show register
+    //hide login
+    divs[1].classList.add('form-style');
+    divs[1].classList.remove('hidden');
+
+    divs[0].classList.add('hidden');
+    divs[0].classList.remove('form-style');
+  }
+}
 
 
 // Back to top
