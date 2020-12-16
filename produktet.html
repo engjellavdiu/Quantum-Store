@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Ballina</title>
+    <title>Produktet</title>
 </head>
 
 <body>
@@ -21,8 +21,8 @@
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li><a href="index.html" class="active">Ballina</a></li>
-                        <li><a href="produktet.html">Produktet</a></li>
+                        <li><a href="index.html">Ballina</a></li>
+                        <li><a href="produktet.html" class="active">Produktet</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li>
                         <li><a href="llogaria.html" class="button">Llogaria</a></li>
                     </ul>
@@ -30,157 +30,15 @@
             </div>
         </header>
 
+        <!-- Main -->
         <main id="main">
-            <!--Slideshow-->
-            <div class="slideshow">
-                <div class="slide">
-                    <img src="images/slideri/3-ps5-slider.png">
-                </div>
-                <div class="slide">
-                    <img src="images/slideri/2-xbox-slider.png">
-                </div>
-                <div class="slide">
-                    <img src="images/slideri/1-asus-slider.png">
-                </div>
-                <div class="slide">
-                    <img src="images/slideri/0-apple-slider.png">
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <br>
-            <div class="dots">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
-
-            <!--Produktet me te kerkuara-->
+            <!-- Smart Phones -->
             <div class="section-title">
-                <h3>Produktet me te fundit</h3>
+                <h3>Smart Phones</h3>
                 <hr class="divider">
             </div>
-            <div class="block">
-                <img src="images/produktet-fundit/watch-series-6-blue.png" alt="">
-                <img src="images/produktet-fundit/razerblade-blue.png" alt="">
-                <img src="images/produktet-fundit/iphone12-blue.png" alt="">
-            </div>
-            <!-- GoToTop -->
-            <button onclick="topFunction()" id="back-to-top" title="Go to top"><img src="images/arrow-top.png" alt=""></button>
-
-            <!--brendet-->
-        <div class="section-title">
-            <h3>Brendet</h3>
-            <hr class="divider">
-        </div>
-        <div class="brendet">
-            <img src="images/brendet-logos/apple-logo.svg" alt="">
-            <img src="images/brendet-logos/ps5-logo.png" alt="">
-            <img src="images/brendet-logos/asus-logo.png" alt="">
-            <img src="images/brendet-logos/xbox-logo.svg" alt="">
-            <img src="images/brendet-logos/razer-logo.png" alt="">
-            <img src="images/brendet-logos/hyper-x-logo.png" alt="">
-        </div>
-            
-            <!--Produktet-->
-            <div class="section-title">
-                <h3>Produktet</h3>
-                <hr class="divider">
-            </div>
-            <div id="produktet-e-kerkuara">
+            <div id="produktet-each">
                 <ul>
-                    <!-- HyperX Cloud -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/hyperx-cloud2.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>HyperX Cloud 2</h3>
-                                <h2 class="price">$89.99</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Razer Kraken -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/razerkraken-productCard.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>Razer Kraken Pro V2</h3>
-                                <h2 class="price">$89.99</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- PS5 -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/ps5-productCard.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>Play Station 5</h3>
-                                <h2 class="price">$399.99</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Xbox X Series -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/xboxseries-productCard.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>Xbox X Series</h3>
-                                <h2 class="price">$260</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- MacBook Pro -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/macbookpro-productCard.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>Macbook Pro</h3>
-                                <h2 class="price">$89.99</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Asus Rog -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/asus-rog-productCard.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>Asus Rog GT51CH</h3>
-                                <h2 class="price">$89.99</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Apple Watch -->
-                    <li>
-                        <div class="card">
-                            <div class="imageC">
-                                <img src="images/appleseries6-productCard.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h3>Apple Watch Series 6</h3>
-                                <h2 class="price">$89.99</h2>
-                                <a href="#" class="addToCart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </li>
                     <!-- iPhone 12 pro -->
                     <li>
                         <div class="card">
@@ -286,26 +144,125 @@
                         </div>
                     </li>
 
-                    
+                </ul>
+            </div>
+                
+            <!-- Gaming Consoles -->
+            <div class="section-title">
+                <h3>Gaming Consoles</h3>
+                <hr class="divider">
+            </div>    
+            <div id="produktet-each">
+                    <ul>
+                    <!-- PS5 -->
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/hyperx-cloud2.png" alt="">
+                                <img src="images/ps5-productCard.png" alt="">
                             </div>
                             <div class="content">
-                                <h3>HyperX Cloud 2</h3>
+                                <h3>Play Station 5</h3>
+                                <h2 class="price">$399.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Xbox X Series -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/xboxseries-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Xbox X Series</h3>
+                                <h2 class="price">$260</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Nintendo Switch -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/switch-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Nintendo Switch</h3>
+                                <h2 class="price">$399.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Nintendo Wii -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/wii-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Nintendo Wii</h3>
+                                <h2 class="price">$399.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    </ul>  
+            </div>
+
+            <!-- Computers -->
+            <div class="section-title">
+                <h3>Computers</h3>
+                <hr class="divider">
+            </div>
+            <div id="produktet-each">
+                <ul>
+                    <!-- MacBook Pro -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/macbookpro-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Macbook Pro</h3>
                                 <h2 class="price">$89.99</h2>
                                 <a href="#" class="addToCart">Add To Cart</a>
                             </div>
                         </div>
                     </li>
+                    <!-- Asus Rog -->
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/hyperx-cloud2.png" alt="">
+                                <img src="images/asus-rog-productCard.png" alt="">
                             </div>
                             <div class="content">
-                                <h3>HyperX Cloud 2</h3>
+                                <h3>Asus Rog GT51CH</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ASUS ROG Strix HERO II -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/asusrog-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Asus Rog Strix</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Origin PC -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/originpc-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Origin PC</h3>
                                 <h2 class="price">$89.99</h2>
                                 <a href="#" class="addToCart">Add To Cart</a>
                             </div>
@@ -313,13 +270,69 @@
                     </li>
                 </ul>
             </div>
-            <div id="shiko-te-gjitha">
-                <a href="produktet.html">Shiko te gjitha produktet...</a>
+
+            <!-- Headphones -->
+            <div class="section-title">
+                <h3>Headphones</h3>
+                <hr class="divider">
+            </div>
+            <div id="produktet-each">
+                <ul>
+                    <!-- HyperX Cloud -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/hyperx-cloud2.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>HyperX Cloud 2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Razer Kraken -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/razerkraken-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Razer Kraken Pro V2</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Beats Studio -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/beats-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Beats Studio</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- JBL ESeries -->
+                    <li>
+                        <div class="card">
+                            <div class="imageC">
+                                <img src="images/jbl-productCard.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>JBL e-Series</h3>
+                                <h2 class="price">$89.99</h2>
+                                <a href="#" class="addToCart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </main>
-
-        
-
         <!--Footer-->
         <footer id="footer">
             <div class="footer-main">
