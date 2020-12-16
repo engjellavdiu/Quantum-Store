@@ -78,3 +78,17 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+//validate
+function validate(number){
+  var inputList = document.getElementsByClassName("input");
+  if (number == 0){
+  //login side
+    if(inputList[0].value == "" || inputList[1].value == ""){
+      alert("Please fill your data")
+      }
+  }
+  else if(number == 1){
+      //register side
+    }
+  }
