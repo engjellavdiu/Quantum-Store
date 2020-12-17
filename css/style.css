@@ -293,7 +293,7 @@ footer {
 }
 .card .content{
     position: relative;
-    padding: 20px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -401,7 +401,7 @@ footer {
     display: none;
 }
 
-#produktet-e-kerkuara{
+/* #produktet-e-kerkuara{
     padding: 2% 5%;
 }
 #produktet-e-kerkuara ul{
@@ -417,7 +417,7 @@ footer {
     list-style: none;
     margin-left: 10px;
     margin-right: 10px;
-}
+} */
 
 #produktet-each{
     padding: 2% 5%;
