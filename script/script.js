@@ -85,7 +85,51 @@ function validate(number){
   if (number == 0){
   //login side
     if(inputList[0].value == "" || inputList[1].value == ""){
-      alert("Please fill your data")
+      alert("Ju lutem mbushni te dhenat!")
       }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//          *                                Easter Egg
+           //\
+          //\\\
+         ///\\\\
+        ////\\\\\
+       /////\\\\\\
+      ///////\\\\\\
+     //           \\
+    //             \\
+   // Zhemape Kidda \\
+  //   /          /  \\
+ //   ( ^ )~( ^ )/    \\
+////////////\\\\\\\\\\\\\
+
+//Urime Festat e Fundevitit stafit te UBT nga:
+//                                            Engjëll Avdiu
+//                                                  &
+//                                            Erjon Januzi
