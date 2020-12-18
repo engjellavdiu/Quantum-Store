@@ -88,7 +88,4 @@ function validate(number){
       alert("Please fill your data")
       }
   }
-  else if(number == 1){
-      //register side
-    }
-  }
+}

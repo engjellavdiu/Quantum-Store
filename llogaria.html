@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="script/valido.js"></script>
     <title>Llogaria</title>
 </head>
 
@@ -46,16 +47,16 @@
                     <h2>Regjistrohu</h2>
                     <hr class="divider">
                     <label for="emri">Emri</label>
-                    <input type="text">
+                    <input id="emri" type="text">
                     <label for="mbiemri">Mbiemri</label>
-                    <input type="text">
+                    <input id="mbiemri" type="text">
                     <label for="email">Email</label>
-                    <input type="email">
+                    <input id="emaili" type="email">
                     <label for="password">Fjalekalimi</label>
-                    <input type="password">
+                    <input id="fjalekalimi1" type="password">
                     <label for="confirmPassword">Konfirmo fjalekalimin</label>
-                    <input type="password">
-                    <input type="submit" class="button" value="Regjistrohu">
+                    <input id="fjalekalimi2" type="password">
+                    <input type="submit" class="button" value="Regjistrohu" id="Btn-submit">
                     <p>Keni llogari? <a onclick="changeForm(0)">Kyqu</a></p>
                 </div>
             </form>
