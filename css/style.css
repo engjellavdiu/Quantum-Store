@@ -426,13 +426,12 @@ footer {
         display: flex;
         justify-content: center;
         flex-flow: row wrap;
-        margin-right: -15px;
-        margin-left: -15px;
+
 }
 #produktet-each ul li{
     list-style: none;
-    margin-left: 20px;
-    margin-right: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 #shiko-te-gjitha {
