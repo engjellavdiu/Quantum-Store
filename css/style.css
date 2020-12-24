@@ -431,9 +431,8 @@ footer {
 }
 #produktet-each ul li{
     list-style: none;
-    flex: 1 0 21%; /*show 4 items per row */
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 25px;
 }
 
 #shiko-te-gjitha {
