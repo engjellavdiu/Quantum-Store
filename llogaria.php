@@ -1,6 +1,4 @@
-        <?php
-            include './components/header.php'
-        ?>
+        <?php include 'components/header.php' ?>
         <div class="llogaria-main">
             <form>
                 <div class="login form form-style">
@@ -34,6 +32,4 @@
         </div>
 
         <!--Footer-->
-        <?php
-            include './components/footer.php'
-        ?>
+        <?php include 'components/footer.php'?>

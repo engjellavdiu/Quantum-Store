@@ -1,6 +1,5 @@
-        <?php
-            include 'components/header.php'
-        ?>
+        <?php include 'components/header.php' ?>
+
         <main id="main">
             <!--Slideshow-->
             <div class="slideshow">
@@ -168,12 +167,10 @@
                 </ul>
             </div>
             <div id="shiko-te-gjitha">
-                <a href="produktet.html">Shiko te gjitha produktet</a>
+                <a href="produktet.php">Shiko te gjitha produktet</a>
             </div>
         </main>
         
 
         <!--Footer-->
-        <?php
-            include './components/footer.php'
-        ?>
+        <?php include 'components/footer.php'?>

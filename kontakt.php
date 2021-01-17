@@ -1,9 +1,4 @@
-<body>
-    <!--Pjesa e headerit me logo dhe navbar-->
-    <div class="mbajtsi">
-        <?php
-            include './components/header.php'
-        ?>
+        <?php include 'components/header.php' ?>
         <!-- main -->
         <main id="main">
             <div class="mbajtsi-box">
@@ -27,8 +22,6 @@
                 </div>
             </div>
         </main>
-
+        
         <!--Footer-->
-        <?php
-            include './components/footer.php'
-        ?>
+        <?php include 'components/footer.php'?>
