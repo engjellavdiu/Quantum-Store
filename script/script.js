@@ -50,9 +50,6 @@ function validateRegForm(name, lname, email, pw, confpw) {
   else if (confpw.value === "" || pw.value !== confpw.value) {
     return 'Sigurohuni që fjalëkalimet të jenë të njëjta';
   }
-  else {
-    return "Ka ndodhur një gabim";
-  }
 }
 
 // valido formen e loginit
