@@ -336,6 +336,7 @@ footer {
 .llogaria-main {
     height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -399,6 +400,16 @@ footer {
 
 .hidden {
     display: none;
+}
+
+.llogaria-error p{
+    color: #D8000C;
+    background-color: #FFD2D2;
+    width: 250px;
+    font-size: 10pt;
+    border-radius: 3px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
 }
 
 /* #produktet-e-kerkuara{

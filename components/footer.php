@@ -2,7 +2,7 @@
             <div class="footer-main">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="images/logos/footer-logo.svg" alt="">
+                        <img src="../images/logos/footer-logo.svg" alt="">
                         <h2>Quantumstore</h2>
                     </a>
                 </div>
@@ -34,11 +34,10 @@
                     </ul>
                 </div>
                 <div class="footer-bar">
-                    <p>&copy;2020<br>Të gjitha të drejtat e rezervuara</p>
+                    <p>&copy;<?php echo date("Y")?><br>Të gjitha të drejtat e rezervuara</p>
                 </div>
             </div>
         </footer>
-        <script src="script/script.js"></script>
-        <script src="script/valido.js"></script>
+        <script src="../script/script.js"></script>
 </body>
 </html>
