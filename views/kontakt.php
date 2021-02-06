@@ -1,4 +1,4 @@
-        <?php include 'components/header.php' ?>
+        <?php include '../components/header.php' ?>
         <!-- main -->
         <main id="main">
             <div class="mbajtsi-box">
@@ -24,4 +24,4 @@
         </main>
         
         <!--Footer-->
-        <?php include 'components/footer.php'?>
+        <?php include '../components/footer.php'?>

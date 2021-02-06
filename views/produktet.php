@@ -1,4 +1,4 @@
-        <?php include 'components/header.php' ?>
+        <?php include '../components/header.php' ?>
         <!-- Main -->
         <main id="main">
             <!-- Smart Phones -->
@@ -303,4 +303,4 @@
             </div>
         </main>
         <!--Footer-->
-        <?php include 'components/footer.php'?>
+        <?php include '../components/footer.php'?>

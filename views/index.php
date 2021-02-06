@@ -1,19 +1,20 @@
-        <?php include 'components/header.php' ?>
+        <?php include '../components/header.php' 
+        ?>
 
-        <main id="main">
-            <!--Slideshow-->
-            <div class="slideshow">
+<main id="main">
+    <!--Slideshow-->
+    <div class="slideshow">
+        <div class="slide">
+            <img src="../images/slideri/3-ps5-slider.png">
+        </div>
+        <div class="slide">
+            <img src="../images/slideri/2-xbox-slider.png">
+        </div>
+        <div class="slide">
+            <img src="../images/slideri/1-asus-slider.png">
+        </div>
                 <div class="slide">
-                    <img src="images/slideri/3-ps5-slider.png">
-                </div>
-                <div class="slide">
-                    <img src="images/slideri/2-xbox-slider.png">
-                </div>
-                <div class="slide">
-                    <img src="images/slideri/1-asus-slider.png">
-                </div>
-                <div class="slide">
-                    <img src="images/slideri/0-apple-slider.png">
+                    <img src="../images/slideri/0-apple-slider.png">
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -32,12 +33,12 @@
                 <hr class="divider">
             </div>
             <div class="block">
-                <img src="images/produktet-fundit/watch-series-6-blue.png" alt="">
-                <img src="images/produktet-fundit/razerblade-blue.png" alt="">
-                <img src="images/produktet-fundit/iphone12-blue.png" alt="">
+                <img src="../images/produktet-fundit/watch-series-6-blue.png" alt="">
+                <img src="../images/produktet-fundit/razerblade-blue.png" alt="">
+                <img src="../images/produktet-fundit/iphone12-blue.png" alt="">
             </div>
             <!-- GoToTop -->
-            <button onclick="topFunction()" id="back-to-top" title="Go to top"><img src="images/arrow-top.png" alt=""></button>
+            <button onclick="topFunction()" id="back-to-top" title="Go to top"><img style="width: 50px;" src="../images/arrow-circle-up-solid.svg" alt=""></button>
 
             <!--brendet-->
         <div class="section-title">
@@ -45,12 +46,12 @@
             <hr class="divider">
         </div>
         <div class="brendet">
-            <img src="images/brendet-logos/apple-logo.svg" alt="">
-            <img src="images/brendet-logos/ps5-logo.png" alt="">
-            <img src="images/brendet-logos/asus-logo.png" alt="">
-            <img src="images/brendet-logos/xbox-logo.svg" alt="">
-            <img src="images/brendet-logos/razer-logo.png" alt="">
-            <img src="images/brendet-logos/hyper-x-logo.png" alt="">
+            <img src="../images/brendet-logos/apple-logo.svg" alt="">
+            <img src="../images/brendet-logos/ps5-logo.png" alt="">
+            <img src="../images/brendet-logos/asus-logo.png" alt="">
+            <img src="../images/brendet-logos/xbox-logo.svg" alt="">
+            <img src="../images/brendet-logos/razer-logo.png" alt="">
+            <img src="../images/brendet-logos/hyper-x-logo.png" alt="">
         </div>
             
             <!--Produktet-->
@@ -64,7 +65,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/hyperx-cloud2.png" alt="">
+                                <img src="../images/hyperx-cloud2.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>HyperX Cloud 2</h3>
@@ -76,7 +77,7 @@
                     <!-- Razer Kraken -->
                     <li>
                         <div class="card">
-                            <div class="imageC">
+                            <div class="../imageC">
                                 <img src="images/razerkraken-productCard.png" alt="">
                             </div>
                             <div class="content">
@@ -90,7 +91,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/ps5-productCard.png" alt="">
+                                <img src="../images/ps5-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Play Station 5</h3>
@@ -103,7 +104,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/xboxseries-productCard.png" alt="">
+                                <img src="../images/xboxseries-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Xbox X Series</h3>
@@ -116,7 +117,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/macbookpro-productCard.png" alt="">
+                                <img src="../images/macbookpro-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Macbook Pro</h3>
@@ -129,7 +130,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/asus-rog-productCard.png" alt="">
+                                <img src="../images/asus-rog-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Asus Rog GT51CH</h3>
@@ -142,7 +143,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/appleseries6-productCard.png" alt="">
+                                <img src="../images/appleseries6-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Apple Watch</h3>
@@ -155,7 +156,7 @@
                     <li>
                         <div class="card">
                             <div class="imageC">
-                                <img src="images/iphone12pro-productCard.png" alt="">
+                                <img src="../images/iphone12pro-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>iPhone 12 pro</h3>
@@ -173,4 +174,4 @@
         
 
         <!--Footer-->
-        <?php include 'components/footer.php'?>
+        <?php include '../components/footer.php'?>
