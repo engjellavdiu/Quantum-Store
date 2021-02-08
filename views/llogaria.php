@@ -9,7 +9,7 @@
 
         <div class="llogaria-main">
             <?php
-                if(isset($_GET['login'])){
+                if(isset($_GET['login']) && isset($_POST['login'])){
                     echo '<div class="llogaria-error">';
                     if($_GET['login'] == "empty-fields")
                         echo '<p>Të gjitha fushat duhet të plotësohen</p>';

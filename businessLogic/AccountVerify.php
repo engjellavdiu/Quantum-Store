@@ -73,7 +73,7 @@ class RegisterVerify{
     private $lastname;
     private $email;
     private $password;
-    private $confirmpassword;
+    
 
     public function __construct($firstname, $lastname, $email, $password){
         $this->firstname = $firstname;
@@ -83,10 +83,42 @@ class RegisterVerify{
     }
 
     public function insertData(){
-        $user = new User($this->firstname, $this->lastname, $this->email, $this->password, 0);
+        //verify data first
+        if($this->verifyData() == false)
+            header("Location: ../views/llogaria.php?register=error");
+        //if all verification is correct proceed to register user
+        
+        /*$user = new User($this->firstname, $this->lastname, $this->email, $this->password, 0);
         $mapper = new UserMapper();
         $mapper->insertUser($user);
         $login = new LoginVerify($this->email, $this->password);
-        $login->verifyData();
+        $login->verifyData();*/
+    }
+
+    private function verifyData(){
+        if(!filter_var($this->email, FILTER_VALIDATE_EMAIL))
+            return false;
+        else if ($this->emailExists())
+            return false;
+        else if($this->validPassword() == false)
+            return false;
+        
+    }
+
+    private function emailExists(){
+        $mapper = new UserMapper();
+        $userEmail = $mapper->getEmail($this->email);
+        if($userEmail == null || count($userEmail) == 0)
+            return false;
+        else if($this->email == $userEmail['email'])
+            return true;
+    }
+
+    private function validPassword(){
+        $regex = '^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$';
+        if(preg_match($regex, $this->password))
+            return true;
+        else 
+            return false;
     }
 }

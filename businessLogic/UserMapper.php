@@ -34,4 +34,13 @@ class UserMapper extends DatabaseConfig {
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getEmail($email){
+        $this->query = "select email from users where email=:email";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":email", $email);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
