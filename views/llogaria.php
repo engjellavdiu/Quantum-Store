@@ -1,26 +1,31 @@
-        <?php
-        include_once '../components/header.php';
-        ?>
+<?php
+    include_once '../components/header.php';
+?>
 
         <?php if(isset($_SESSION['is_logged_in'])) {?>
             <h1 style="margin: 250px 0 250px 0;">You are already logged in</h1>
         <?php } else { ?>
-        
-
-        <div class="llogaria-main">
-            <?php
-                if(isset($_GET['login']) && isset($_POST['login'])){
-                    echo '<div class="llogaria-error">';
-                    if($_GET['login'] == "empty-fields")
-                        echo '<p>Të gjitha fushat duhet të plotësohen</p>';
-                    else if ($_GET['login'] == "error")
-                        echo '<p>Email dhe/ose fjalëkalimi është dhënë</p>';
-                    echo '</div>';
-                }
-            ?>
-            
-            <div id="log-error" class="llogaria-error hidden">
-                <p id='msg'></p>
+        <div class="llogaria-main">            
+            <div id="log-error" class="
+                <?php if(isset($_SESSION['login-register-error']) && $_SESSION['login-register-error'] == true && (isset($_GET['login']) || isset($_GET['register']))) { 
+                    echo 'llogaria-error"'; 
+                    } else { ?>  
+                        llogaria-error hidden"
+                        <?php } ?>>
+                <p id='msg'><?php
+                    if(isset($_GET['login'])){
+                        if($_GET['login'] == "error") 
+                            echo 'Email ose fjalëkalimi është dhënë gabim';
+                        else if ($_GET['login'] == "emptyfields")
+                            echo 'Të gjitha fushat duhet të plotësohen';
+                    }
+                    else if (isset($_GET['register'])){
+                        if ($_GET['register'] == 'emptyfields')
+                        echo 'Të gjitha fushat duhet të plotësohen';
+                        else if($_GET['register'] == 'error')
+                            echo 'Email që keni dhënë është në përdorim nga një llogari tjetër. Ju lutemi provoni një email tjetër!';
+                    }
+                $_SESSION['login-register-error'] = false; ?></p>
             </div>
             <form method="POST" action="../businessLogic/AccountVerify.php" id='llogaria-form'>
                 <div class="login form form-style">

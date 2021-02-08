@@ -1,6 +1,6 @@
 <?php 
-    session_start();
     $page = basename($_SERVER['PHP_SELF']);
+    session_start();
 
 ?>
 <!DOCTYPE html>

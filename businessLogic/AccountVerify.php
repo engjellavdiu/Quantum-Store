@@ -9,7 +9,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
     $login = new LoginVerify($email, $password);
     $login->verifyData();
-} if (isset($_POST['register'])){
+} else if (isset($_POST['register'])){
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['register-email'];
@@ -18,7 +18,7 @@ if(isset($_POST['login'])){
     $register = new RegisterVerify($firstname, $lastname, $email, $password);
     $register->insertData();
 } else {
-    
+    header("Location: ../views/index.php");
 }
 
 class LoginVerify {
@@ -32,10 +32,12 @@ class LoginVerify {
 
     public function verifyData(){
         if($this->emptyInputs($this->email, $this->password)){
-            header("Location: ../views/llogaria.php?login=empty-fields");
+            $_SESSION['login-register-error'] = true;
+            header("Location: ../views/llogaria.php?login=emptyfields");
         } else if ($this->correctLoginData($this->email, $this->password)){
             header("Location: ../views/index.php?login=success");
         } else{
+            $_SESSION['login-register-error'] = true;
             header("Location: ../views/llogaria.php?login=error");
         }
     }
@@ -54,7 +56,6 @@ class LoginVerify {
             return false;
         }
         else if (password_verify($password, $user['password'])) {
-            print_r($user);
             if ($user['is_admin'] == 1) {
                 $obj = new Admin($user['id'], $user['first_name'], $user['last_name'], $user['password'], $user['role']);
                 $obj->setSession();
@@ -73,7 +74,6 @@ class RegisterVerify{
     private $lastname;
     private $email;
     private $password;
-    
 
     public function __construct($firstname, $lastname, $email, $password){
         $this->firstname = $firstname;
@@ -83,16 +83,23 @@ class RegisterVerify{
     }
 
     public function insertData(){
-        //verify data first
-        if($this->verifyData() == false)
+        //check if inputs are empty
+        if($this->emptyInputs($this->firstname, $this->lastname, $this->email, $this->password)){
+            $_SESSION['login-register-error'] = true;
+            header("Location: ../views/llogaria.php?register=emptyfields");
+        } // check if all data input is correct based on methods verify data, filter_var, emailExists and validPassword
+        else if($this->verifyData() == false){
+            $_SESSION['login-register-error'] = true;
             header("Location: ../views/llogaria.php?register=error");
-        //if all verification is correct proceed to register user
-        
-        /*$user = new User($this->firstname, $this->lastname, $this->email, $this->password, 0);
-        $mapper = new UserMapper();
-        $mapper->insertUser($user);
-        $login = new LoginVerify($this->email, $this->password);
-        $login->verifyData();*/
+        } // if all verification is correct proceed to register user
+        else {
+            $user = new User($this->firstname, $this->lastname, $this->email, $this->password, 0);
+            $mapper = new UserMapper();
+            $mapper->insertUser($user);
+            //login user after registering
+            $login = new LoginVerify($this->email, $this->password);
+            $login->verifyData();
+        }
     }
 
     private function verifyData(){
@@ -102,7 +109,15 @@ class RegisterVerify{
             return false;
         else if($this->validPassword() == false)
             return false;
-        
+        else
+            return true;
+    }
+
+    private function emptyInputs($firstname, $lastname, $email, $password){
+        if(empty($firstname) || empty($lastname) || empty($email) || empty($password))
+            return true;
+        else
+            return false;
     }
 
     private function emailExists(){
@@ -115,7 +130,7 @@ class RegisterVerify{
     }
 
     private function validPassword(){
-        $regex = '^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$';
+        $regex = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/";
         if(preg_match($regex, $this->password))
             return true;
         else 
