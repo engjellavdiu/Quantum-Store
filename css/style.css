@@ -105,24 +105,39 @@ header {
 
 .navbar ul{
     display: flex;
+    align-items: center;
     list-style-type: none;
 }
 
 .navbar ul a{
     padding: 5px 10px;
     margin: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul img {
+    max-width: 15px;
+    margin-left: 3px;
 }
 
 .navbar ul li:last-child a{
-    padding: 10px 20px;
+    padding: 10px 30px;
+}
+
+.navbar ul li:last-child a img {
+    margin: 0 8px 0 0;
 }
 
 .navbar ul a:not(.button):hover {
     border-bottom: 2px solid #323232;
 }
+
 /*Main*/
 #main{
-    min-height: 500px;
+    min-height: 40px;
     width:100%;
 }
 

@@ -26,12 +26,21 @@
                     <?php if(isset($_SESSION['is_logged_in']) && $_SESSION['role'] == 1 ){ ?>
                         <li class="<?php if($page == 'dashboard.php'){ echo ' active';}?>"><a href="dashboard.php">Dashboard</a></li>
                     <?php } else {?>
-                        <li class="<?php if($page == 'shporta.php'){ echo ' active';}?>"><a href="shporta.php">Shporta</a></li>
+                        <li class="<?php if($page == 'shporta.php'){ echo ' active';}?>">
+                        <a id='shporta-nav-link' href="shporta.php">
+                            Shporta<img src="../images/shopping-bag-solid.svg" alt="">
+                        </a>
+                        </li>
                     <?php } ?>
                     <?php if(isset($_SESSION['is_logged_in'])){ ?>
                         <li><a href="logout.php" class="button">Logout</a></li>
                     <?php } else {?>
-                    <li class="<?php if($page == 'llogaria.php'){ echo ' active';}?>"><a href="llogaria.php" class="button">Llogaria</a></li>
+                        <li class="<?php if($page == 'llogaria.php'){ echo ' active';}?>">
+                            <a href="llogaria.php" class="button">
+                                <img src="../images/user-circle.svg" alt="">
+                                Llogaria
+                            </a>
+                            </li>
                     <?php }?>
                 </ul>
             </div>
