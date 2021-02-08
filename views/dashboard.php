@@ -12,7 +12,7 @@
     ?>
 
     <?php echo "<h1>Mirësevini, </h1>";?>
-
+    <main id='main'>
     <div>
         <h2>All users</h2>
         <table border="1">
@@ -42,7 +42,7 @@
             </tbody>
         </table>
     </div>
-
+    </main>
 
 
     <?php }

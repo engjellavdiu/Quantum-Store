@@ -14,7 +14,4 @@ abstract class Person {
         $this->password=$password;
         $this->role=$role;
     }
-
-    abstract protected function setSession();
-    abstract protected function setCookie();
 }
