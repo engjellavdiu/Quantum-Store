@@ -43,4 +43,20 @@ class UserMapper extends DatabaseConfig {
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getAllUsers(){
+        $this->query = "select * from users";
+        $statement = $this->connection->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function deleteUser($id)
+    {
+        $this->query = "delete from users where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+    }
 }
