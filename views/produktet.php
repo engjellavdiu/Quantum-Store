@@ -25,7 +25,7 @@ $products = $mapper->getAllProducts();
                             </div>
                             <div class="content">
                                 <h3><?php echo $product['emri']; ?></h3>
-                                <h2 class="price"><?php echo $product['cmimi']; ?></h2>
+                                <h2 class="price"><?php echo $product['cmimi']; ?> €</h2>
                                 <a href="#" class="addToCart">Shto në Shportë</a>
                             </div>
                         </div>
