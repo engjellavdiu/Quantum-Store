@@ -10,7 +10,7 @@ $products = $mapper->getAllProducts();
         <main id="main">
             <!-- Smart Phones -->
             <div class="section-title">
-                <h3>Telefona</h3>
+                <h3>Produkte</h3>
                 <hr class="divider">
             </div>
             <div id="produktet-each">

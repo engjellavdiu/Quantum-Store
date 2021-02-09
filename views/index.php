@@ -13,12 +13,12 @@
         <div class="slide">
             <img src="../images/slideri/1-asus-slider.png">
         </div>
-                <div class="slide">
-                    <img src="../images/slideri/0-apple-slider.png">
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+        <div class="slide">
+            <img src="../images/slideri/0-apple-slider.png">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
             <br>
             <div class="dots">
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -77,8 +77,8 @@
                     <!-- Razer Kraken -->
                     <li>
                         <div class="card">
-                            <div class="../imageC">
-                                <img src="images/razerkraken-productCard.png" alt="">
+                            <div class="imageC">
+                                <img src="../images/razerkraken-productCard.png" alt="">
                             </div>
                             <div class="content">
                                 <h3>Razer Kraken Pro V2</h3>
