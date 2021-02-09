@@ -15,13 +15,32 @@ if(isset($_GET['pid']))
 }
 ?>
 <main id="main">
-<h3>Id= <?php echo $products['id'] ?></h3>
-<h3>Emri= <?php echo $products['emri'] ?></h3>
-<h3>Cmimi= <?php echo $products['cmimi'] ?>$</h3>
-<h5>Pershkrimi= <?php echo $products['pershkrimi'] ?></h5>
-<h3>Sasia= <?php echo $products['sasia']?></h3>
-<h3>Kategoria= <?php echo $products['kategoria'] ?></h3>
-<img src=<?php echo $products['image'] ?> alt="">
+<div class="details-container-row">
+    <div class="details-container-col-left">
+        
+        <ul>
+            <li><h3><?php echo $products['emri']?></h3></li>
+            <li>/</li>
+            <li><h3><?php echo $products['kategoria']?></h3></li>
+        </ul>
+        <img src=<?php echo $products['image'] ?> alt="">
+        </div>        
+             
+    <div class="details-container-col-right">
+        <div class="section-title">                 
+        <ul>
+            <li><h2>Id: <?php echo $products['id'] ?></h2></li> 
+            <li><h2>Pershkrimi: </h2><hr class="divider"><h4><?php echo $products['pershkrimi'] ?></h4></li>
+            
+            <li><h3>Sasia: <?php echo $products['sasia']?></h3></li>
+            <li><h3>Cmimi: $<?php echo $products['cmimi'] ?></h3></li>
+        </ul>
+        </div> 
+    </div>
+    
+    
+</div>
+
 </main>
 <?php 
 include '../components/footer.php'

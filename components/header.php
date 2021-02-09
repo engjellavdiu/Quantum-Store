@@ -7,6 +7,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../details.css">
 </head>
 <body>
     <div class="mbajtsi">
