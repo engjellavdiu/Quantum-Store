@@ -12,17 +12,18 @@
         $user = $mapper->getUserByEmail($_SESSION['email']);
     ?>
 
-    <?php echo "<h2>Mirësevini, ".$user['first_name']."</h2>";?>
+    
     <main id='main'>
-    <div>
-        <h2>All users</h2>
-        <table border="1">
+        
+        <div class="db-container">
+        <!-- <h3><?php echo "<h2>Mirësevini, ".$user['first_name']."</h2>";?></h3> -->
+        <table class="db-table">
             <thead>
                 <tr>
                     <th>Emri</th>
                     <th>Mbiemri</th>
                     <th>Email</th>
-                    <th>Modifiko</th>
+                    <th colspan="3">Modifiko</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,7 +48,7 @@
                 </tr>
                 <?php } ?>
             </tbody>
-        </table>
+        </table>    
     </div>
     </main>
 
