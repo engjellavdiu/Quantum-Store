@@ -35,5 +35,13 @@ class ProductMapper extends DatabaseConfig {
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    //get last 8 products
+    
+    public function getProductsById($id){
+        $this->query = "select * from products where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }    
