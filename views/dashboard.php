@@ -8,10 +8,11 @@
     }
     else if (isset($_SESSION['is_logged_in']) && $_SESSION['role'] == 1){
         $mapper =  new UserMapper();
-        $users = $mapper->getAllUsers();
+        $userList = $mapper->getAllUsers();
+        $user = $mapper->getUserByEmail($_SESSION['email']);
     ?>
 
-    <?php echo "<h1>Mirësevini, </h1>";?>
+    <?php echo "<h2>Mirësevini, ".$user['first_name']."</h2>";?>
     <main id='main'>
     <div>
         <h2>All users</h2>
@@ -25,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($users as $user){ ?>
+                <?php foreach($userList as $user){ ?>
                 <tr>
                     <td>
                         <?php echo $user['first_name']; ?>
@@ -36,7 +37,13 @@
                     <td>
                         <?php echo $user['email']; ?>
                     </td>
-                    <td><a href="<?php echo "../businessLogic/ModifyUsers.php?action=delete&user_id=".$user['id']; ?>">Fshij</a></td>
+                    <td><a href="<?php echo "../businessLogic/modify-users.php?action=delete&user_id=".$user['id']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të fshini përdoruesin?');">Fshij</a></td>
+                    <?php if($user['is_admin'] == 1) {?>
+                        <td><a href="<?php echo "../businessLogic/modify-users.php?action=removeadmin&user_id=".$user['id']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të fshini përdoruesin si administrator?');">Remove admin</a></td>
+                    <?php } else { ?>
+                        <td><a href="<?php echo "../businessLogic/modify-users.php?action=makeadmin&user_id=".$user['id']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të promovoni përdoruesin në administrator?');">Make admin</a></td>
+                    <?php } ?>
+                    <td><a href="<?php echo "../businessLogic/modify-users.php?action=edit&user_id=".$user['id']; ?>">Modifiko</a></td>
                 </tr>
                 <?php } ?>
             </tbody>

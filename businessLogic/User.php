@@ -11,10 +11,11 @@ class User extends Person {
         $_SESSION['role'] = 0;
         $_SESSION['rolename'] = "SimpleUser";
         $_SESSION['is_logged_in'] = true;
+        $_SESSION['email'] = $this->email;
     }
 
     public function setCookie(){
-        setcookie("username", $this->getEmail(), time() + 120); //modify later
+        setcookie("email", $this->getEmail(), time() + 3600); //modify later
     }
 
     public function getFirstName(){

@@ -256,7 +256,6 @@ footer {
     opacity: 0.8;
 }
 
-
 /* #323232
 #0081CC
 #F4F5F9
@@ -332,7 +331,7 @@ footer {
 
 /*Login Content*/
 .llogaria-main {
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -409,6 +408,54 @@ footer {
     padding: 20px 15px;
     margin-bottom: 20px;
 }
+
+/*edit-user card*/
+.edit-user-main {
+    min-height:80vh;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-user-card {
+    background-color: white;
+    width: 400px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 255, 0.1);
+    align-items: center;
+    border:0.1px solid lightgrey;
+}
+
+.edit-user-card img {
+    max-width: 50px;
+    margin: 15px 0;
+}
+
+.edit-user-card input[type=text], 
+.edit-user-card input[type=email], 
+.edit-user-card input[type=password], 
+.edit-user-card input[type=submit]{
+    width: 80%;
+    margin: 10px 0;
+    height: 30px;
+}
+
+.edit-user-card input[type=submit]{
+    margin: 15px 0;
+    border: none;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.edit-user-card a, label{
+    font-size: 10pt;
+}
+
 
 /* #produktet-e-kerkuara{
     padding: 2% 5%;

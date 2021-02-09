@@ -12,10 +12,11 @@ class Admin extends Person {
         $_SESSION['role'] = 1;
         $_SESSION['rolename'] = "Admin";
         $_SESSION['is_logged_in'] = true;
+        $_SESSION['email'] = $this->email;
     }
 
     public function setCookie(){
-        setcookie("username", $this->getEmail(), time() + 120); //subject to change
+        setcookie("email", $this->getEmail(), time() + 3600); //subject to change
     }
 
     public function getFirstName(){
