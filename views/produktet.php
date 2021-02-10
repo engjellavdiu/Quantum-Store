@@ -18,7 +18,7 @@ $products = $mapper->getAllProducts();
                     <li>
                         <a href="<?php echo "view-product.php?pid=$pid" ?>"><div class="card">
                             <div class="imageC">
-                                <img src="<?php echo $product['image']; ?>">
+                            <img src=<?php echo $product['image']; ?>>
                             </div>
                         </a>    
                             <div class="content">

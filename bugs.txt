@@ -1,0 +1,3 @@
+input float values on add product [x]
+index slider                      [ ]
+product card image                [ ]

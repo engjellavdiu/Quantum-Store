@@ -18,7 +18,7 @@
             <label for="name">Emri i produktit</label>
             <input type="text" name="name" value="">
             <label for="price">Cmimi</label>
-            <input type="number" name="price" value="">
+            <input type="number" step="any" name="price" value="">
             <label for="desc">Përshkrimi</label>
             <textarea name="desc" value=""></textarea>
             <label for="qty">Sasia në stok</label>
