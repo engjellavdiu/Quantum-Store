@@ -4,24 +4,21 @@ include_once '../businessLogic/Product.php';
 
 $mapper = new ProductMapper();
 $products = $mapper->getAllProducts();
-?>
-        
+?>  
         <!-- Main -->
         <main id="main">
-            <!-- Smart Phones -->
             <div class="section-title">
                 <h3>Produkte</h3>
                 <hr class="divider">
             </div>
             <div id="produktet-each">
                 <ul>
-                    <!-- iPhone 12 pro -->
                     <?php foreach($products as $product){ ?>
                     <?php $pid= $product['id']; ?>
                     <li>
-                        <a href="<?php echo "details.php?pid=$pid" ?>"><div class="card">
+                        <a href="<?php echo "view-product.php?pid=$pid" ?>"><div class="card">
                             <div class="imageC">
-                            <img src=<?php echo $product['image']; ?>>
+                                <img src="<?php echo $product['image']; ?>">
                             </div>
                         </a>    
                             <div class="content">
@@ -35,6 +32,5 @@ $products = $mapper->getAllProducts();
                 </ul>
             </div>
         </main>
-        <!--Footer-->
 <?php include '../components/footer.php'?>
 

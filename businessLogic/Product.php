@@ -1,26 +1,29 @@
 <?php
 class Product{
-    protected $id;
     protected $emri;
+    protected $cmimi;
     protected $pershkrimi;
     protected $sasia;
     protected $kategoria;
     protected $image;
+    protected $admin;
 
-    public function __construct($id,$emri,$pershkrimi,$sasia,$kategoria,$image){
-        $this->id=$id;
+    public function __construct($emri, $cmimi, $pershkrimi,$sasia,$kategoria,$image, $admin_id){
         $this->emri=$emri;
+        $this->cmimi = $cmimi;
         $this->pershkrimi=$pershkrimi;
         $this->sasia=$sasia;
         $this->kategoria=$kategoria;
         $this->image=$image;
+        $this->admin = $admin_id;
     }
 
-    public function getID(){
-        return $this->id;
-    }
     public function getEmri(){
         return $this->emri;
+    }
+
+    public function getCmimi(){
+        return $this->cmimi;
     }
     public function getPershkrimi(){
         return $this->pershkrimi;
@@ -33,5 +36,8 @@ class Product{
     }
     public function getImage(){
         return $this->image;
+    }
+    public function getAdminId(){
+        return $this->admin;
     }
 }
