@@ -11,6 +11,7 @@ class DatabaseConfig {
         return $this->connection;
     }
 
+
     private function createConnection(){
         try {
             $this->connection = new PDO("mysql:host=$this->host;dbname=$this->dbname", "root", "");

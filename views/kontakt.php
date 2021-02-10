@@ -9,17 +9,19 @@
                     ></iframe>           
                 </div>
 
-                <div id="box-right">
+                <form id="box-right" method="POST" action="../businessLogic/send-message.php">
                     <h2>Na kontaktoni</h2>
                     <hr class="divider">
-                    <label for="name">Emri dhe Mbiemri</label>
-                    <input id="emriPlote" type="text">
+                    <label for="name">Emri</label>
+                    <input id="emriPlote" type="text" name="name">
+                    <label for="name">Mbiemri</label>
+                    <input id="emriPlote" type="text" name="lastname">
                     <label for="email">Email</label>
-                    <input id="emaili1" type="email">
+                    <input id="emaili1" type="email" name="email">
                     <label for="mesazhi">Mesazhi</label>
-                    <input id="mesazhi" type="text1">
-                    <input id="dergo" type="submit" class="button" value="Dergo">
-                </div>
+                    <textarea id="mesazhi" type="text" name="msg"></textarea>
+                    <input id="dergo" type="submit" class="button" name="send-msg" value="Dergo">
+                </form>
             </div>
         </main>
         
