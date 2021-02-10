@@ -20,7 +20,7 @@ class ProductMapper extends DatabaseConfig {
         $sasia = $product->getSasia();
         $kategoria = $product->getKategoria();
         $image = $product->getImage();
-        $admin = $product->getAdmin();
+        $admin = $product->getAdminId();
         $statement->bindParam(":emri", $emri);
         $statement->bindParam(":cmimi", $cmimi);
         $statement->bindParam(":pershkrimi", $pershkrimi);
