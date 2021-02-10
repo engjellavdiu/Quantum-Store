@@ -61,6 +61,9 @@
         <table class="db-table">
             <thead>
                 <tr>
+                    <th colspan="5"><a href="add-product.php">Shto produkt</a></th>
+                </tr>
+                <tr>    
                     <th>Emri</th>
                     <th>Cmimi</th>
                     <th>Sasia</th>
@@ -70,6 +73,7 @@
             <tbody>
                 <?php foreach($productList as $product){ ?>
                     <tr>
+                        
                         <td>
                             <?php echo $product['emri']; ?>
                         </td>
@@ -87,15 +91,14 @@
         </table>
     </div>
 
-
-    <a href="add-product.php">Shto produkt</a>
+    <div class="db-container">
     <table class="db-table">
             <thead>
                 <tr>
                     <th>Emri</th>
                     <th>Mbiemri</th>
                     <th>Email</th>
-                    <th>Opsionet</th>
+                    <th colspan="2">Opsionet</th>
                 </tr>
             </thead>
             <tbody>
@@ -115,7 +118,10 @@
                 </tr>
                 <?php } ?>
             </tbody>
-        </table> 
+    </table> 
+    </div>                
+    
+    
     </main>
 
 
