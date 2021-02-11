@@ -1,7 +1,8 @@
 //valido formen e regjistrimit
 const submitbtn = document.getElementById('submit-btn');
 
-submitbtn.addEventListener('click', (e)=> {
+if(submitbtn){
+  submitbtn.addEventListener('click', (e)=> {
     const name = document.getElementById('fname');
     const lname = document.getElementById('lname');
     const email = document.getElementById('reg-email');
@@ -18,6 +19,7 @@ submitbtn.addEventListener('click', (e)=> {
         error.classList.remove('hidden');
     }
 });
+}
 
 function validateRegForm(name, lname, email, pw, confpw) {
   if (name.value === "" && lname.value === "" && email.value === "" && pw.value === ""
@@ -55,20 +57,22 @@ function validateRegForm(name, lname, email, pw, confpw) {
 // valido formen e loginit
 const loginsubmit = document.getElementById('login-submit-btn');
 
-loginsubmit.addEventListener('click', (e)=> {
-  const email = document.getElementById('login-email');
-  const pw = document.getElementById('login-pw');
-  const error = document.getElementById('log-error');
-  let message = "";
-
-  message = validateLoginForm(email, pw);
+if(loginsubmit){
+  loginsubmit.addEventListener('click', (e)=> {
+    const email = document.getElementById('login-email');
+    const pw = document.getElementById('login-pw');
+    const error = document.getElementById('log-error');
+    let message = "";
   
-  if (message.length > 0){
-      e.preventDefault();
-      document.getElementById('msg').textContent = message;
-      error.classList.remove('hidden');
-  }
-});
+    message = validateLoginForm(email, pw);
+    
+    if (message.length > 0){
+        e.preventDefault();
+        document.getElementById('msg').textContent = message;
+        error.classList.remove('hidden');
+    }
+  });
+}
 
 function validateLoginForm(email, pw){
   if(email.value === "" && pw.value === "")
@@ -97,72 +101,6 @@ function validatePassword(pw){
   return pw.value.match(regex);                         // min 1 karakter uppercase
 }
 
-//valido kontaktin
-/*document.addEventListener("DOMContentLoaded",
-    function (kontakti) {
-        const dergo = document.getElementById('dergo');
-        const validoKontakti = (ngjarja) => {
-            ngjarja.preventDefault();
-            const emriPlote = document.getElementById('emriPlote');
-            const emaili1 = document.getElementById('emaili1');
-            const mesazhi = document.getElementById('mesazhi');
-
-
-            if (emriPlote.value === "") {
-                alert('Ju lutem shtoni Emrin');
-                emriPlote.focus();
-                return false;
-            }
-            if (emaili1.value === "") {
-                alert('Ju lutem shtoni Email-in')
-                emaili1.focus();
-                return false;
-            }
-            if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(emaili1.value))) {
-                alert('Email-i nuk eshte valid');
-                emaili.focus();
-                return false;
-            }
-            if (mesazhi.value === "") {
-                alert('Ju lutem shtoni Mesazhin');
-                emaili.focus();
-                return false;
-            }
-        }
-        dergo.addEventListener('click', validoKontakti);
-        return false;
-    });*/
-
-
-
-/*Slideshow*/
-/*
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slide");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-}
-*/
 /*Login/register form exchange*/
 function changeForm(number) {
   var llogariaDiv = document.getElementsByClassName('llogaria-main');
@@ -193,6 +131,74 @@ function changeForm(number) {
     divs[0].classList.add('hidden');
     divs[0].classList.remove('form-style');
   }
+}
+
+//Valido kontakt formen//
+const sendMessageBtn = document.getElementById('dergo');
+
+if (sendMessageBtn) {
+  sendMessageBtn.addEventListener('click', (e) => {
+    const emri = document.getElementById('emriPlote');
+    const mbiemri = document.getElementById('mbiemri');
+    const email = document.getElementById('emaili');
+    const msg = document.getElementById('mesazhi');
+    const error = document.getElementById('log-error');
+    let message = "";
+
+    message = validateContactForm(emri, mbiemri, email, msg);
+
+    if (message.length > 0) {
+      e.preventDefault();
+      document.getElementById('msg').textContent = message;
+      error.classList.remove('hidden');
+    }
+  });
+}
+
+function validateContactForm(emri, mbiemri, email, msg) {
+  if(emri.value === "" && mbiemri.value === "" && email.value === "" && msg.value === "")
+    return "Të gjitha fushat duhet të plotësohen";
+  else if (emri.value === "" || emri == null)
+    return "Emri duhet të plotësohet";
+  else if (!onlyLetters(emri))
+    return "Emri duhet të ketë vetëm shkronja";
+  else if (mbiemri.value === "" || mbiemri == null)
+    return "Mbiemri duhet të plotësohet";
+  else if (!onlyLetters(mbiemri))
+    return "Mbiemri duhet të ketë vetëm shkronja";
+  else if (email.value === "" || email == null)
+    return "Email duhet të plotësohet";
+  else if (!validateEmail(email))
+    return "Email-i nuk është valid";
+  else if (msg.value === "" || msg == null)
+    return "Ju lutem shkruani mesazhin tuaj";
+}
+
+/*Slideshow*/
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slide");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
 }
 
 // Back to top
@@ -282,3 +288,39 @@ function validate(number){
 //         }
 //         BtnSubmit.addEventListener('click', validoFormen);
 //     });
+
+//valido kontaktin
+/*document.addEventListener("DOMContentLoaded",
+    function (kontakti) {
+        const dergo = document.getElementById('dergo');
+        const validoKontakti = (ngjarja) => {
+            ngjarja.preventDefault();
+            const emriPlote = document.getElementById('emriPlote');
+            const emaili1 = document.getElementById('emaili1');
+            const mesazhi = document.getElementById('mesazhi');
+
+
+            if (emriPlote.value === "") {
+                alert('Ju lutem shtoni Emrin');
+                emriPlote.focus();
+                return false;
+            }
+            if (emaili1.value === "") {
+                alert('Ju lutem shtoni Email-in')
+                emaili1.focus();
+                return false;
+            }
+            if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(emaili1.value))) {
+                alert('Email-i nuk eshte valid');
+                emaili.focus();
+                return false;
+            }
+            if (mesazhi.value === "") {
+                alert('Ju lutem shtoni Mesazhin');
+                emaili.focus();
+                return false;
+            }
+        }
+        dergo.addEventListener('click', validoKontakti);
+        return false;
+    });*/
