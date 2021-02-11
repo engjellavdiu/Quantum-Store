@@ -3,33 +3,57 @@ include_once '../businessLogic/ProductMapper.php';
 include_once '../businessLogic/Product.php';
 
 $mapper = new ProductMapper();
-$products = $mapper->getAllProducts();
+
+    $products = $mapper->getAllProducts();
+    if(isset($_GET['filter']) && $_GET['filter'] == 'price-low-to-high'){
+        $products = $mapper->getPriceLowToHigh();
+    } else if (isset($_GET['filter']) && $_GET['filter'] == 'price-high-to-low'){
+        $products = $mapper->getPriceHighToLow();
+    } else if (isset($_GET['filter']) && $_GET['filter'] == 'name-A-Z'){
+        $products = $mapper->getNameAtoZ();
+    } else if (isset($_GET['filter']) && $_GET['filter'] == 'name-Z-A'){
+        $products = $mapper->getNameZtoA();
+    } else if (isset($_GET['filter']) && $_GET['filter'] == 'newest'){
+        $products = $mapper->getNewest();
+    } else if (isset($_GET['filter']) && $_GET['filter'] == 'oldest'){
+        $products = $mapper->getOldest();
+    } else if (isset($_GET['filter']) && $_GET['filter'] == 'all'){
+        $products = $mapper->getAllProducts();
+    } else {
+        $products = $mapper->getAllProducts();
+    }
 ?>  
-        <!-- Main -->
         <main id="main">
-            <div class="section-title">
-                <h3>Produkte</h3>
-                <hr class="divider">
-            </div>
-            <div id="produktet-each">
-                <ul>
-                    <?php foreach($products as $product){ ?>
-                    <?php $pid= $product['id']; ?>
-                    <li>
-                        <a href="<?php echo "view-product.php?pid=$pid" ?>"><div class="card">
-                            <div class="imageC">
-                            <img src=<?php echo $product['image']; ?>>
-                            </div>
-                        </a>    
-                            <div class="content">
-                                <h3><?php echo $product['emri']; ?></h3>
-                                <h2 class="price"><?php echo $product['cmimi']; ?> €</h2>
-                                <a href="#" class="addToCart">Shto në Shportë</a>
-                            </div> 
+        <div id="product-filter">
+            <form method="GET" action="<?= $_SERVER['PHP_SELF']?>">
+                <select name="filter">
+                    <option value="all">Të gjitha</option>
+                    <option value="price-low-to-high">Cmimi: poshtë-lart</option>
+                    <option value="price-high-to-low">Cmimi: lart-poshtë</option>
+                    <option value="name-A-Z">Emri: A-Z</option>
+                    <option value="name-Z-A">Emri: Z-A</option>
+                    <option value="newest">Më të fundit</option>
+                    <option value="oldest">Më të vjetrat</option>
+                </select>
+                <input type="submit" value="Filtro">
+            </form>
+        </div>
+            <div class="products-container">
+                <div class="products-panel wrapper">
+                    <?php foreach($products as $product){
+                        $pid = $product['id']; ?>
+                        <div class="square">
+                        <div>
+                            <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
                         </div>
-                    </li>
+                        <div>
+                            <h3><?php echo $product['emri']; ?></h3>
+                            <h2><?php echo $product['cmimi']; ?>&euro;</h2>
+                            <a href="" class="button">Shto ne shporte</a>
+                        </div>
+                    </div>
                     <?php } ?>
-                </ul>
+                </div>
             </div>
         </main>
 <?php include '../components/footer.php'?>
