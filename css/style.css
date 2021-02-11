@@ -14,7 +14,6 @@
 }
 .mbajtsi{
     max-width:100%;
-    overflow: hidden;
     height: 100%;
     margin: 0 auto;
 }
@@ -541,15 +540,6 @@ footer {
     }
 }*/
 
-
-/* Mobile */
-@media(max-width: 500px){
-    .brendet {
-        flex-direction: column;
-    }
-}
-
-
 /* Back to top*/
 
 
@@ -578,6 +568,14 @@ footer {
     width: 100%;
     justify-content: center;
 }
+
+.mbajtsi-box div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #box-left{
     background-color: white;
     height: 400px;
@@ -640,9 +638,8 @@ footer {
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    
 }
 .db-table thead tr {
     background-color: #00A0FF;
@@ -796,10 +793,10 @@ footer {
 .view-product-image {
     width: 50%;
     padding: 15px;
-    margin: 0 15px;
+    margin: 40px 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .view-product-image img{
@@ -849,4 +846,173 @@ footer {
     font-size: 8pt;
     text-align: right;
     color: #005180;
+}
+
+
+/*dashboard panel*/
+.dashboard-container {
+    margin: 50px 0;
+}
+
+.dashboard-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.square {
+    background-color: white;
+    flex-basis: 33%;
+    border: 1px solid #d4d4d4;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.greet {
+    background-color: white;
+    flex-basis: 99.5%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 255, 0.1);
+}
+
+.square a:hover{
+    color: #0000EE;
+    border-bottom: 1px solid #0000EE;
+}
+
+.square img {
+    width: 45%;
+}
+
+/*products*/
+.products-container{
+    margin: 50px 0;
+}
+
+.products-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.products-container .wrapper {
+    max-width: 80%;
+}
+
+.products-panel .square{
+    flex-basis: 24%;
+    border: 1px solid #d4d4d4;
+    min-height: 400px;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 255, 0.1);
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.products-panel .square:hover {
+    transform: scale(1.02);
+    transition: transform 100ms ease-in-out;
+    box-shadow: 0 3px 5px rgba(0, 0, 255, 0.2);
+}
+
+.products-panel .square div:first-child{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.products-panel .square div:first-child a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-panel .square div:first-child a:hover {
+    border: none;
+}
+
+.products-panel .square div:first-child img {
+    width: 60%;
+    max-width: 70%;
+}
+
+.products-panel .square div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-panel .square div:nth-child(2) a{
+    padding: 10px 20px;
+    margin: 15px 0;
+}
+
+.products-panel .square div:nth-child(2) a:hover {
+    background-color: #005180;
+    color: white;
+    border: none;
+}
+
+#product-filter {
+    max-width: 79%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 1200px){
+    .products-panel .square{
+        flex-basis: 33%;
+        border: 1px solid #d4d4d4;
+        min-height: 400px;
+        border-radius: 5px;
+    }
+}
+
+
+/* Mobile */
+@media(max-width: 600px){
+    .brendet {
+        flex-direction: column;
+    }
+
+    .dashboard-panel{
+        flex-direction: column;
+    }
+
+    .products-panel{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 920px){
+    .products-panel .square{
+        flex-basis: 45%;
+        border: 1px solid #d4d4d4;
+        min-height: 400px;
+        border-radius: 5px;
+    }
 }
