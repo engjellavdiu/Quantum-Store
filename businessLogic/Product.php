@@ -7,8 +7,9 @@ class Product{
     protected $kategoria;
     protected $image;
     protected $admin;
+    protected $prodhuesi;
 
-    public function __construct($emri, $cmimi, $pershkrimi,$sasia,$kategoria,$image, $admin_id){
+    public function __construct($emri, $cmimi, $pershkrimi,$sasia,$kategoria,$image, $admin_id, $prodhuesi){
         $this->emri=$emri;
         $this->cmimi = $cmimi;
         $this->pershkrimi=$pershkrimi;
@@ -16,6 +17,7 @@ class Product{
         $this->kategoria=$kategoria;
         $this->image=$image;
         $this->admin = $admin_id;
+        $this->prodhuesi = $prodhuesi;
     }
 
     public function getEmri(){
@@ -39,5 +41,8 @@ class Product{
     }
     public function getAdminId(){
         return $this->admin;
+    }
+    public function getProdhuesi(){
+        return $this->prodhuesi;
     }
 }

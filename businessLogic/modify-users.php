@@ -16,19 +16,19 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
                 header("Location: ../views/logout.php");
             }else {
                 $mapper->deleteUser($_GET['user_id']);
-                header("Location: ../views/dashboard.php");
+                header("Location: ../views/view-users.php");
             }
             
         }
     } else if(isset($_GET['action']) && ($_GET['action'] == 'makeadmin')){
         if(isset($_GET['user_id']) && (is_numeric($_GET['user_id']))){
             $mapper->makeAdmin($_GET['user_id']);
-            header("Location: ../views/dashboard.php");
+            header("Location: ../views/view-users.php");
         }
     } else if(isset($_GET['action']) && ($_GET['action'] == 'removeadmin')){
         if(isset($_GET['user_id']) && (is_numeric($_GET['user_id']))){
             $mapper->removeAdmin($_GET['user_id']);
-            header("Location: ../views/dashboard.php");
+            header("Location: ../views/view-users.php");
         }
     } else if(isset($_GET['action']) && ($_GET['action'] == 'edit')){
         $user_id = $_GET['user_id'];

@@ -5,7 +5,7 @@
 
     if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) 
         && $_SESSION['is_logged_in'] == 1 && $_SESSION['role'] == 1){
-        
+
         $errors = [];
         $mapper = new ProductMapper();
         if(isset($_GET['action']) && $_GET['action'] == 'edit'){
@@ -21,11 +21,9 @@
             $qty = $_POST['qty'];
             $cat = $_POST['cat'];
 
-            $updatedProduct = new Product($id, $prod_name, $price, $desc, $qty, $cat, $product['image']);
-            $mapper->updateProduct($updatedProduct, $id);
-            header("Location: dashboard.php");
+            $mapper->updateProduct($id, $prod_name, $price, $desc, $qty, $cat);
+            header("Location: view-products.php");
         }
-
 ?>  
     <div class="edit-product-main">
         <img src="<?= $product['image']?>">

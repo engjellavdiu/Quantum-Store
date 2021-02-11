@@ -34,7 +34,7 @@
             } else {
                 $updateuser = new User($first_name, $last_name, $email, $password, 0);
                 $mapper->edit($updateuser, $id);
-                header("Location: ../views/dashboard.php");
+                header("Location: view-users.php");
             }
         }
 ?>  
@@ -54,7 +54,7 @@
             <input type="email" name="email" value="<?= $user['email'] ?>">
             <input type="password" name="pw" value="<?= $user['password'] ?>">
             <input class="button" type="submit" name="update-user-btn" value="Ruaj ndryshimet">
-            <a href="dashboard.php">Anulo</a>
+            <a href="view-users.php">Anulo</a>
         </form>
     </div>
 <?php } else {

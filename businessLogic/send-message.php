@@ -27,6 +27,11 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
             $mapper->setAsRead($_GET['msg_id']);
             header("Location: ../views/dashboard.php");
         }
+    } else if(isset($_GET['action']) && $_GET['action'] == 'set_unread'){
+        if(isset($_GET['msg_id']) && (is_numeric($_GET['msg_id']))) {
+            $mapper->setAsUnread($_GET['msg_id']);
+            header("Location: ../views/dashboard.php");
+        }
     }
 } else {
     header("Location: ../views/index.php");

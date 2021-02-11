@@ -10,7 +10,7 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
 
         if(isset($_GET['prod_id']) && (is_numeric($_GET['prod_id']))) {
             $pmapper->deleteProduct($_GET['prod_id']);
-            header("Location: ../views/dashboard.php");
+            header("Location: ../views/view-products.php");
         }
     } else if(isset($_GET['action']) && ($_GET['action'] == 'edit_product')){
         if(isset($_GET['prod_id']) && (is_numeric($_GET['prod_id']))){

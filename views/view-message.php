@@ -14,7 +14,13 @@
             <p><b>Mesazh nga:</b> <?= $msg['emri'].' '.$msg['mbiemri']?></p>
             <p><b>Email: </b><?= $msg['email']?></p>
             <textarea disabled><?= $msg['msg']?></textarea>
-            <p><a href="<?= "../businessLogic/send-message.php?action=set_read&msg_id=".$msg['id']?>">Mark as Read</a></p>
+            <p><a href="
+                <?php if($msg['is_read'] == 0) 
+                    echo "../businessLogic/send-message.php?action=set_read&msg_id=".$msg['id'];
+                else if($msg['is_read'] == 1)
+                    echo "../businessLogic/send-message.php?action=set_unread&msg_id=".$msg['id'];?>">
+                <?php if($msg['is_read'] == 1) echo "Mark as unread"; else echo "Mark as read"?>
+            </a></p>
         </div>
     </div>
 <?php } else {
