@@ -10,13 +10,13 @@ class CartMapper extends DatabaseConfig {
         $this->connection = $this->getConnection();
     }
 
-    public function insertCart($cart){
-        $this->query = "insert into cart (product_id) values (:product_id)";
+    public function insertToCart($user_id, $product_id){
+        $this->query = "insert into cart (user_id, product_id) 
+            values (:user_id, :product_id)";
         $statement = $this->connection->prepare($this->query);
-        $product_id = $cart->getProductId();
         $statement->bindParam(":product_id", $product_id);
+        $statement->bindParam(":user_id", $user_id);
         $statement->execute();
-        return true;
     }
 
 
@@ -44,4 +44,12 @@ class CartMapper extends DatabaseConfig {
     //     return $result;
     // }
 
+    public function getCartProducts($user_id){
+        $this->query = "select * from cart where user_id=:user_id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":user_id", $user_id);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

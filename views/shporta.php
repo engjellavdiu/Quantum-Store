@@ -1,40 +1,50 @@
 <?php
-include '../components/header.php';
 include_once '../businessLogic/CartMapper.php';
 include_once '../businessLogic/UserMapper.php';
+include_once '../businessLogic/ProductMapper.php';
+include '../components/header.php';
 
 if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) 
         && $_SESSION['is_logged_in'] == 1 && $_SESSION['role'] == 0){
-            
+
             $cmapper = new CartMapper();
             $umapper = new UserMapper();
             $cartlist = $cmapper->getCart();
             $loggeduser = $umapper->getLoginID();
             
+            $cartProducts = $cmapper->getCartProducts($loggeduser['id']);
+
+            $pmapper = new ProductMapper();
+
+            global $produktetNeShporte;
+            $produktetNeShporte = array();
+
+            for($i = 0; $i < count($cartProducts); $i = $i + 1){
+                $prod = $pmapper->getProductsById($cartProducts[$i]['product_id']);
+                $produktetNeShporte[$i] = [$prod];
+            }            
 ?>
 <main id="main">
-<!-- <h1>Miresevini  ne shporte</h1> -->
 <div class="db-container">
 <table class="db-table">
             <thead>
                 <tr>
-                    <th>CartID</th>
-                    <th>UserID</th>
+                    <th>Emri</th>
+                    <th>Cmimi</th>
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($cartlist as $cart){ ?>
+            <?php foreach($produktetNeShporte as $produkt){ ?>
                     <tr>
                         <td>
-                            <?php echo $cart['id']; ?>
+                            <?php for($i = 0; $i < count($produkt); $i = $i + 1) echo $produkt[$i]['emri'];?>
                         </td>
                         <td>
-                            <?php echo $cart['product_id']; ?>
+                            <?php for($i = 0; $i < count($produkt); $i = $i + 1) echo $produkt[$i]['cmimi'];?>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
-            <h3><?php echo $loggeduser['id']?></h3>
     </table> 
 </div>   
   

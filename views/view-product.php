@@ -34,7 +34,7 @@ if(isset($_GET['pid'])){
                 </div>
                 <div>
                     <p><b>Cmimi </b><?= $product['cmimi']?>&euro;</p>
-                    <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
+                    <a href="../test.php?pid=<?= $pid ?>">Shto ne korp</a>
                 </div>
                 <div>
                     <p>*Ky produkt është postuar nga <?= $admin['first_name'].' '.$admin['last_name']?></p>

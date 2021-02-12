@@ -1,6 +1,7 @@
 <?php include '../components/header.php';
 include_once '../businessLogic/ProductMapper.php';
 include_once '../businessLogic/Product.php';
+include_once '../businessLogic/Cart.php';
 include_once '../businessLogic/CartMapper.php';
 include_once '../businessLogic/UserMapper.php';
 
@@ -48,15 +49,13 @@ $cmapper = new CartMapper();
             </form>
         </div>
             <div class="products-container">
-            <?php 
-                if(isset($_POST['add-to-cart'])){
-                    $cmapper->insertCart($pid);      
-            }?>
+            
             <form action="<?= $_SERVER['PHP_SELF']?>" method="POST">   
                 <div class="products-panel wrapper">
                     <?php foreach($products as $product){
-                        $pid = $product['id']; 
+                        $pid = $product['id'];
                         ?>
+                        <input class="hidden" type="text" name="product_id" value=<?php $pid; ?>> 
                         <div class="square">
                         <div>
                             <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
@@ -64,7 +63,7 @@ $cmapper = new CartMapper();
                         <div>
                             <h3><?php echo $product['emri']; ?></h3>
                             <h2><?php echo $product['cmimi']; ?>&euro;</h2>
-                            <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
+                            <a href="<?php echo "view-product.php?pid=$pid" ?>">Shiko Produktin</a>
                         </div>
                     </div>
                     <?php } ?>
