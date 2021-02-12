@@ -26,6 +26,14 @@ class UserMapper extends DatabaseConfig {
         $statement->execute();
     }
 
+    public function getLoginID(){
+        $this->query = "SELECT * FROM users WHERE email = '".$_SESSION['email']."'";
+        $statement = $this->connection->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function getUserByID($id){
         $this->query = "select * from users where id=:id";
         $statement = $this->connection->prepare($this->query);

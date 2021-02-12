@@ -1,8 +1,14 @@
 <?php include '../components/header.php';
 include_once '../businessLogic/ProductMapper.php';
 include_once '../businessLogic/Product.php';
+include_once '../businessLogic/CartMapper.php';
+include_once '../businessLogic/UserMapper.php';
 
+$umapper = new UserMapper();
 $mapper = new ProductMapper();
+$cmapper = new CartMapper();
+
+
 
     $products = $mapper->getAllProducts();
     if(isset($_GET['filter']) && $_GET['filter'] == 'price-low-to-high'){
@@ -22,6 +28,9 @@ $mapper = new ProductMapper();
     } else {
         $products = $mapper->getAllProducts();
     }
+
+    
+
 ?>  
         <main id="main">
         <div id="product-filter">
@@ -39,9 +48,15 @@ $mapper = new ProductMapper();
             </form>
         </div>
             <div class="products-container">
+            <?php 
+                if(isset($_POST['add-to-cart'])){
+                    $cmapper->insertCart($pid);      
+            }?>
+            <form action="<?= $_SERVER['PHP_SELF']?>" method="POST">   
                 <div class="products-panel wrapper">
                     <?php foreach($products as $product){
-                        $pid = $product['id']; ?>
+                        $pid = $product['id']; 
+                        ?>
                         <div class="square">
                         <div>
                             <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
@@ -49,12 +64,13 @@ $mapper = new ProductMapper();
                         <div>
                             <h3><?php echo $product['emri']; ?></h3>
                             <h2><?php echo $product['cmimi']; ?>&euro;</h2>
-                            <a href="" class="button">Shto ne shporte</a>
+                            <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
                         </div>
                     </div>
                     <?php } ?>
                 </div>
             </div>
+            </form>
         </main>
 <?php include '../components/footer.php'?>
 

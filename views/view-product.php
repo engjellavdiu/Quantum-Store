@@ -2,6 +2,7 @@
 include_once '../businessLogic/ProductMapper.php';
 include_once '../businessLogic/Product.php';
 include_once '../businessLogic/UserMapper.php';
+include_once '../businessLogic/CartMapper.php';
 include '../components/header.php';
 
 if(isset($_GET['pid'])){
@@ -33,7 +34,7 @@ if(isset($_GET['pid'])){
                 </div>
                 <div>
                     <p><b>Cmimi </b><?= $product['cmimi']?>&euro;</p>
-                    <a href="#">Shto në shportë</a>
+                    <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
                 </div>
                 <div>
                     <p>*Ky produkt është postuar nga <?= $admin['first_name'].' '.$admin['last_name']?></p>
@@ -57,7 +58,7 @@ if(isset($_GET['pid'])){
                             <div>
                                 <h3><?php echo $catProduct['emri']; ?></h3>
                                 <h2><?php echo $catProduct['cmimi']; ?>&euro;</h2>
-                                <a href="" class="button">Shto ne shporte</a>
+                                <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
                             </div>
                         </div>
                         <?php } ?>
