@@ -966,7 +966,7 @@ footer {
     }
 }
 
-/*Media queries tablet*/
+/*Media queries tablet */
 @media(max-width: 920px){
     .products-panel .square{
         flex-basis: 45%;
@@ -983,7 +983,7 @@ footer {
         flex-direction: column;
         display: flex;
     }
-    
+
     .view-product-image {
         width: 80%;
         padding: 15px;
