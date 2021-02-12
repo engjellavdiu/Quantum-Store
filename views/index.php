@@ -52,7 +52,7 @@ include '../components/header.php';
                         <div>
                             <h3><?php echo $product['emri']; ?></h3>
                             <h2><?php echo $product['cmimi']; ?>&euro;</h2>
-                            <a href="" class="button">Shto ne shporte</a>
+                            <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
                         </div>
                     </div>
                     <?php } ?>

@@ -66,7 +66,6 @@ if(isset($_GET['pid'])){
                 </div>
         <?php } ?>
     </div>
-
 </main>
 <?php 
 include '../components/footer.php'
