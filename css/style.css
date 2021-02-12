@@ -966,8 +966,43 @@ footer {
     }
 }
 
-/*Media queries tabel engjelli*/
+/*Media queries tablet*/
+@media(max-width: 920px){
+    .products-panel .square{
+        flex-basis: 45%;
+        border: 1px solid #d4d4d4;
+        min-height: 400px;
+        border-radius: 5px;
+    }
 
+    .edit-product-card {
+        width: 75%;
+    }
+
+    .view-product {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .view-product-image {
+        width: 80%;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+    }
+
+    .product-info {
+        padding: 15px;
+        width: 80%;
+        line-height: 18pt;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+    }
+}
 
 
 @media(max-width: 1200px){
