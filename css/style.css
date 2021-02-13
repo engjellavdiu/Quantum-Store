@@ -136,7 +136,7 @@ header {
 
 /*Main*/
 #main{
-    min-height: 500px;
+    min-height: 80vh;
     width:100%;
 }
 
@@ -767,7 +767,7 @@ footer {
     justify-content: space-between;
 }
 
-.product-info div:nth-child(3) input {
+.product-info div:nth-child(3) a {
     background-color: #00A0FF;
     color: white;
     border-radius: 3px;
@@ -776,6 +776,13 @@ footer {
     padding: 10px 0;
     text-align: center;
     border: none;
+}
+
+.product-info div:nth-child(3) a{
+    margin: 15px 0;
+    width: 70%;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .product-info div:nth-child(3) input:hover {
@@ -788,6 +795,19 @@ footer {
     text-align: right;
     color: #005180;
 }
+
+#nostock {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    font-size: 10pt;
+    width: 60%;
+    border-radius: 3px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
 
 
 /*dashboard panel*/
@@ -899,13 +919,13 @@ footer {
     align-items: center;
 }
 
-.products-panel .square div:nth-child(2) input{
+.products-panel .square div:nth-child(2) a{
     padding: 10px 20px;
     margin: 15px 0;
     border: none;
 }
 
-.products-panel .square div:nth-child(2) input:hover {
+.products-panel .square div:nth-child(2) a:hover {
     background-color: #005180;
     color: white;
     border: none;
@@ -917,6 +937,102 @@ footer {
     margin: auto;
     margin-top: 50px;
 }
+
+
+/*cart*/
+.cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 255, 0.1);
+    border:0.1px solid lightgrey;
+    border-radius: 3px;
+    width: 350px;
+    background-color: white;
+    text-align: center;
+    margin: 10% 0;
+}
+
+.cart-message a {
+    margin: 15px 0;
+    width: 80%;
+    padding: 10px 0;
+}
+
+.cart-message p {
+    margin: 15px 0 15px 0;
+}
+
+
+
+/*Reth nesh*/
+.rrethnesh-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.rrethnesh-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 255, 0.1);
+    border:0.1px solid lightgrey;
+    border-radius: 3px;
+    min-width: 79%;
+    max-width: 80%;
+    background-color: white;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.rrethnesh-card div:first-child hr{
+    width: 200px;
+    margin: 15px 0;
+}
+
+.rrethnesh-card div:first-child h1 {
+    margin: 15px 0 0 0;
+}
+
+.rrethnesh-card div:nth-child(2) {
+    margin: 20px 50px 50px 50px;
+    text-align: justify;
+    line-height: 20pt;
+    font-size: 13pt;
+}
+
+.rrethnesh-card div:nth-child(2) textarea {
+    resize: none;
+    width: 75vw;
+    height: 80vh;
+    line-height: 20pt;
+    text-align: left;
+    padding: 20px;
+    font-size: 12pt;
+}
+
+.rrethnesh-card div:nth-child(2) input[type=submit]{
+    margin: 15px 15px;
+    padding: 15px 50px;
+    border: none;
+}
+
+.rrethnesh-card div:nth-child(2) input[type=submit]:hover {
+    cursor: pointer;
+}
+
 
 /*MEDIA QUERIES*/
 
