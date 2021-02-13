@@ -136,7 +136,7 @@ header {
 
 /*Main*/
 #main{
-    min-height: 80vh;
+    min-height: 60vh;
     width:100%;
 }
 
@@ -512,6 +512,7 @@ footer {
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-bottom: 100px;
 }
 #box-right{
     background-color: white;
