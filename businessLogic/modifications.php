@@ -2,6 +2,7 @@
 include_once 'ProductMapper.php';
 include_once 'UserMapper.php';
 include_once 'MessageMapper.php';
+include_once 'CartMapper.php';
 session_start();
 
 //  Nqs useri eshte loggedin dhe eshte admin, atehere procedo
@@ -132,7 +133,13 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
             header("Location: ../views/dashboard.php?action=add-brand-images");
         }
     }
-} 
+} else if(isset($_GET['action']) && $_GET['action'] == "remove-from-cart"){
+    if(isset($_GET['product-id'])){
+        $cartmapper = new CartMapper();
+        $cartmapper->deleteProductFromCart($_GET['product-id']);
+        header("Location: ../views./shporta.php");
+    }
+}
 // perndryshe nese nuk eshte logged in dhe admin, atehere dergo ne index
 else {
     header("Location: ../views/index.php");

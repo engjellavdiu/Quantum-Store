@@ -7,10 +7,10 @@ include '../components/header.php';
 if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) 
         && $_SESSION['is_logged_in'] == 1 && $_SESSION['role'] == 0){
 
-            /*$cmapper = new CartMapper();
+            $cmapper = new CartMapper();
             $umapper = new UserMapper();
             $cartlist = $cmapper->getCart();
-            $loggeduser = $umapper->getLoginID();
+            $loggeduser = $umapper->getUserByEmail($_SESSION['email']);
             
             $cartProducts = $cmapper->getCartProducts($loggeduser['id']);
 
@@ -22,32 +22,64 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in'])
             for($i = 0; $i < count($cartProducts); $i = $i + 1){
                 $prod = $pmapper->getProductsById($cartProducts[$i]['product_id']);
                 $produktetNeShporte[$i] = [$prod];
-            }          */
+            }
+
+            $totali = 0; 
 ?>
-    <!--<main id="main">
-        <div class="db-container">
-            <table class="db-table">
-                <thead>
-                    <tr>
-                        <th>Emri</th>
-                        <th>Cmimi</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                    <?php foreach($produktetNeShporte as $produkt){ ?>
+    <main id="main">
+        <div class="cart">
+            <div class="db-container">
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>Produkti</th>
+                            <th>Cmimi</th>
+                            <th>Opsionet</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        <?php foreach($produktetNeShporte as $produkt){?>
+                            <?php for($i = 0; $i < count($produkt); $i = $i + 1){
+                                $totali = $totali + $produkt[$i]['cmimi']?>
+                                <tr>
+                                    <td>
+                                         <?php echo $produkt[$i]['emri'];?>
+                                    </td>
+                                    <td>
+                                        <?php echo $produkt[$i]['cmimi'];?> &euro;
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo "../businessLogic/modifications.php?action=remove-from-cart&product-id=".$produkt[$i]['id']; ?>">Largo nga shporta</a>
+                                    </td>
+                                </tr>
+                            <?php }
+                             }?>
+                        </tbody>
+                </table> 
+            </div>
+            <div class="db-container">
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>Totali</th>
+                        </tr>
+                    </thead>
+                        <tbody>
                             <tr>
                                 <td>
-                                    <?php for($i = 0; $i < count($produkt); $i = $i + 1) echo $produkt[$i]['emri'];?>
-                                </td>
+                                    <?php echo $totali; ?>&euro;
+                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
-                                    <?php for($i = 0; $i < count($produkt); $i = $i + 1) echo $produkt[$i]['cmimi'];?>
+                                    <a class="button" href="">Checkout</a>
                                 </td>
                             </tr>
-                        <?php } ?>
-                    </tbody>
-            </table> 
-        </div>   
-    </main>-->
+                        </tbody>
+                </table> 
+            </div>
+        </div>
+    </main>
 <?php } else { ?>
     
     <main id="main">

@@ -89,7 +89,10 @@ else if(isset($_POST['send-msg'])){
 }
 else if(isset($_GET['action']) && $_GET['action'] == 'add-to-cart'){
     if(isset($_GET['product-id'])){
-        
+        $usermapper = new UserMapper();
+        $cartmapper = new CartMapper();
+        $user = $usermapper->getUserByEmail($_SESSION['email']);
+        $cartmapper->insertToCart($user['id'], $_GET['product-id']);
         header("Location: ../views/shporta.php");
     }
 } else if(isset($_POST['change-reth-nesh'])){

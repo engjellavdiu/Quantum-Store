@@ -971,6 +971,26 @@ footer {
     margin: 15px 0 15px 0;
 }
 
+.cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cart .db-container {
+    flex-basis: 60%;
+}
+
+.cart div:nth-child(2) {
+    flex-basis: 20%;
+}
+
+.cart div:nth-child(2) a{
+    padding: 10px 50px;
+}
+
 
 
 /*Reth nesh*/
@@ -1117,6 +1137,18 @@ footer {
         justify-content: center;
         margin: auto;
         text-align: center;
+    }
+
+    .cart {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .cart .db-container {
+        flex-basis: 100%;
+        margin: 15px auto;
+    }    
+    .cart div:nth-child(2) {
+        flex-basis: 100%;
     }
 }
 

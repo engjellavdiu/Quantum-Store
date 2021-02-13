@@ -35,14 +35,6 @@ class CartMapper extends DatabaseConfig {
         $resut = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $resut;
     }
-    
-    // public function getCartDetails(){
-    //     $this->query = "select * from products p, cart_items ic where p.id = ic.product_id";
-    //     $statement = $this->connection->prepare($this->query);
-    //     $statement->execute();
-    //     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    //     return $result;
-    // }
 
     public function getCartProducts($user_id){
         $this->query = "select * from cart where user_id=:user_id";
@@ -51,5 +43,12 @@ class CartMapper extends DatabaseConfig {
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+    }
+
+    public function deleteProductFromCart($product_id){
+        $this->query = "delete from cart where product_id=:product_id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":product_id", $product_id);
+        $statement->execute();
     }
 }

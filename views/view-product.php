@@ -8,13 +8,16 @@ include '../components/header.php';
 if(isset($_GET['pid'])){
     $pmapper = new ProductMapper();
     $mapper = new UserMapper();
+    $cmapper = new CartMapper();
+
     $pid=$_GET['pid'];
     $product = $pmapper->getProductsById($pid);
     $admin = $mapper->getUserById($product['admin_id']);
-
     $productsOfSameCategory = $pmapper->getProductsByCategory($product['kategoria'], $product['id']);
-}
-?>
+
+    $userCart = $mapper->getUserByEmail($_SESSION['email']);
+    $cartProducts = $cmapper->getCartProducts($userCart['id']);
+}?>
 
 <main id="main">
     <div class="wrapper">
@@ -34,10 +37,20 @@ if(isset($_GET['pid'])){
                 </div>
                 <div>
                     <p><b>Cmimi </b><?= $product['cmimi']?>&euro;</p>
-                    <?php if($product['sasia'] == 0){ ?>
+                    <?php 
+                    $isInCart = false;
+                    for($i = 0; $i < count($cartProducts); $i = $i + 1){
+                        if($product['id'] == $cartProducts[$i]['product_id']){
+                            $isInCart = true;
+                            break;
+                        }
+                    }
+                    if($product['sasia'] == 0){ ?>
                         <p id="nostock">Nuk ka stok</p>
                     <?php } else if(!isset($_SESSION['is_logged_in'])) { ?>
                         <a href="llogaria.php" class="button">Kyqu për të shtuar në shportë</a>
+                    <?php } else if($isInCart){ ?>
+                        <p><b>Produkti është në shportë</b></p>
                     <?php } else { ?>
                         <a href=" <?php echo "../businessLogic/upload.php?action=add-to-cart&product-id=".$product['id'] ?>">Shto në shportë</a>
                     <?php } ?>
