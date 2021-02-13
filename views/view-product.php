@@ -34,10 +34,18 @@ if(isset($_GET['pid'])){
                 </div>
                 <div>
                     <p><b>Cmimi </b><?= $product['cmimi']?>&euro;</p>
-                    <a href="../test.php?pid=<?= $pid ?>">Shto ne korp</a>
+                    <?php if($product['sasia'] == 0){ ?>
+                        <p id="nostock">Nuk ka stok</p>
+                    <?php } else if(!isset($_SESSION['is_logged_in'])) { ?>
+                        <a href="llogaria.php" class="button">Kyqu për të shtuar në shportë</a>
+                    <?php } else { ?>
+                        <a href=" <?php echo "../businessLogic/upload.php?action=add-to-cart&product-id=".$product['id'] ?>">Shto në shportë</a>
+                    <?php } ?>
                 </div>
                 <div>
-                    <p>*Ky produkt është postuar nga <?= $admin['first_name'].' '.$admin['last_name']?></p>
+                    <?php if($admin != null){ ?>
+                        <p>*Ky produkt është postuar nga <?= $admin['first_name'].' '.$admin['last_name']?></p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -58,7 +66,7 @@ if(isset($_GET['pid'])){
                             <div>
                                 <h3><?php echo $catProduct['emri']; ?></h3>
                                 <h2><?php echo $catProduct['cmimi']; ?>&euro;</h2>
-                                <input class="button" type="submit" name="add-to-cart" value="Shto ne shporte">
+                                <a class="button" href="<?php echo "view-product.php?pid=$pid" ?>">Shiko Produktin</a>
                             </div>
                         </div>
                         <?php } ?>

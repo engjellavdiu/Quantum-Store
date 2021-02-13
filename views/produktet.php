@@ -29,9 +29,6 @@ $cmapper = new CartMapper();
     } else {
         $products = $mapper->getAllProducts();
     }
-
-    
-
 ?>  
         <main id="main">
         <div id="product-filter">
@@ -48,28 +45,25 @@ $cmapper = new CartMapper();
                 <input type="submit" value="Filtro">
             </form>
         </div>
-            <div class="products-container">
-            
-            <form action="<?= $_SERVER['PHP_SELF']?>" method="POST">   
+            <div class="products-container"> 
                 <div class="products-panel wrapper">
                     <?php foreach($products as $product){
                         $pid = $product['id'];
                         ?>
                         <input class="hidden" type="text" name="product_id" value=<?php $pid; ?>> 
                         <div class="square">
-                        <div>
-                            <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
+                            <div>
+                                <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
+                            </div>
+                            <div>
+                                <h3><?php echo $product['emri']; ?></h3>
+                                <h2><?php echo $product['cmimi']; ?>&euro;</h2>
+                                <a class="button" href="<?php echo "view-product.php?pid=$pid" ?>">Shiko Produktin</a>
+                            </div>
                         </div>
-                        <div>
-                            <h3><?php echo $product['emri']; ?></h3>
-                            <h2><?php echo $product['cmimi']; ?>&euro;</h2>
-                            <a href="<?php echo "view-product.php?pid=$pid" ?>">Shiko Produktin</a>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
             </div>
-            </form>
         </main>
 <?php include '../components/footer.php'?>
 

@@ -9,7 +9,7 @@
         $errors = [];
         $mapper = new ProductMapper();
         if(isset($_GET['action']) && $_GET['action'] == 'edit'){
-            $product = $mapper->getProductsById($_GET['prod_id']);
+            $product = $mapper->getProductsById($_GET['prod-id']);
             $categories = $mapper->getCategoriesExcept($product['kategoria']);
         }  
 
@@ -22,7 +22,7 @@
             $cat = $_POST['cat'];
 
             $mapper->updateProduct($id, $prod_name, $price, $desc, $qty, $cat);
-            header("Location: view-products.php");
+            header("Location: dashboard.php?action=view-products");
         }
 ?>  
     <div class="edit-product-main">
@@ -40,7 +40,7 @@
                 <?php endforeach; ?>
             </select>
             <input class="button" type="submit" name="update-product-btn" value="Ruaj ndryshimet">
-            <a href="dashboard.php">Anulo</a>
+            <a href="dashboard.php?action=view-products">Anulo</a>
         </form>
     </div>
 <?php } else {

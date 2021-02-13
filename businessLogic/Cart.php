@@ -1,7 +1,7 @@
 <?php
 class Cart{  
-    protected $user_id;
-    protected $product_id;
+    private $user_id;
+    private $product_id;
 
     public function __construct($user_id, $product_id){
         $this->user_id = $user_id;
@@ -13,7 +13,5 @@ class Cart{
     }
     public function getProductId(){
         return $this->product_id;
-    }
-
-    
+    }  
 }

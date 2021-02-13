@@ -139,6 +139,28 @@ class ProductMapper extends DatabaseConfig {
         $statement->execute();
     }
 
+    public function promoteProduct($id){
+        $this->query = "update products set is_promoted=1 where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+    }
+
+    public function demoteProduct($id){
+        $this->query = "update products set is_promoted=0 where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+    }
+
+    public function getPromotedProducts(){
+        $this->query = "select * from products where is_promoted=1";
+        $statement = $this->connection->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function getAllCategories(){
         $this->query = "select * from categories";
         $statement = $this->connection->prepare($this->query);
@@ -170,11 +192,58 @@ class ProductMapper extends DatabaseConfig {
         $statement->execute();
     }
 
+    public function deleteFromSlider($id){
+        $this->query = "delete from slider where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+    }
+
     public function getSliderImages(){
         $this->query = "select * from slider";
         $statement = $this->connection->prepare($this->query);
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getSliderImage($id){
+        $this->query = "select * from slider where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function insertIntoBrands($image){
+        $this->query = "insert into brands (image) values (:image)";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":image", $image);
+        $statement->execute();
+    }
+
+    public function deleteFromBrands($id){
+        $this->query = "delete from brands where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+    }
+
+    public function getBrandImages(){
+        $this->query = "select * from brands";
+        $statement = $this->connection->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getBrandImage($id){
+        $this->query = "select * from brands where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 }    

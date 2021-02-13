@@ -1,13 +1,14 @@
 <?php
+
 class Product{
-    protected $emri;
-    protected $cmimi;
-    protected $pershkrimi;
-    protected $sasia;
-    protected $kategoria;
-    protected $image;
-    protected $admin;
-    protected $prodhuesi;
+    private $emri;
+    private $cmimi;
+    private $pershkrimi;
+    private $sasia;
+    private $kategoria;
+    private $image;
+    private $admin;
+    private $prodhuesi;
 
     public function __construct($emri, $cmimi, $pershkrimi,$sasia,$kategoria,$image, $admin_id, $prodhuesi){
         $this->emri=$emri;

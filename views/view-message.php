@@ -16,9 +16,9 @@
             <textarea disabled><?= $msg['msg']?></textarea>
             <p><a href="
                 <?php if($msg['is_read'] == 0) 
-                    echo "../businessLogic/send-message.php?action=set_read&msg_id=".$msg['id'];
+                    echo "../businessLogic/modifications.php?action=set-read&msg-id=".$msg['id'];
                 else if($msg['is_read'] == 1)
-                    echo "../businessLogic/send-message.php?action=set_unread&msg_id=".$msg['id'];?>">
+                    echo "../businessLogic/modifications.php?action=set-unread&msg-id=".$msg['id'];?>">
                 <?php if($msg['is_read'] == 1) echo "Mark as unread"; else echo "Mark as read"?>
             </a></p>
         </div>

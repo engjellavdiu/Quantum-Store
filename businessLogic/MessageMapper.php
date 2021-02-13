@@ -65,4 +65,20 @@ class MessageMapper extends DatabaseConfig {
         $statement->bindParam(":id", $id);
         $statement->execute();
     }
+
+    public function getText(){
+        $this->query = "select * from rrethnesh";
+        $statement = $this->connection->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function updateText($id, $text){
+        $this->query = "update rrethnesh set text=:newtext where id=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->bindParam(":newtext", $text);
+        $statement->execute();
+    }
 }
