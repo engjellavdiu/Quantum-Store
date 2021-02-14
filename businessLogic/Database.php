@@ -3,7 +3,6 @@
 class DatabaseConfig {
     private $connection;
     private $host = "localhost";
-    private $user = "root";
     private $dbname = "quantum";
 
     protected function getConnection(){

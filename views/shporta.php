@@ -5,7 +5,7 @@ include_once '../businessLogic/ProductMapper.php';
 include '../components/header.php';
 
 if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) 
-        && $_SESSION['is_logged_in'] == 1 && $_SESSION['role'] == 0){
+        && $_SESSION['is_logged_in'] == 1 && ($_SESSION['role'] == 0 || $_SESSION['role'] == 1)){
 
             $cmapper = new CartMapper();
             $umapper = new UserMapper();

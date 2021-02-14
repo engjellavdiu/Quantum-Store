@@ -11,18 +11,11 @@ include '../components/header.php';
 <main id="main">
     <!--Slideshow-->
     <?php include '../components/slider.php' ?>
-            <!--Produktet me te kerkuara-->
-            <div class="section-title">
-                <h3>Produktet me te fundit</h3>
-                <hr class="divider">
-            </div>
-            <div class="block">
-                <img src="../images/produktet-fundit/watch-series-6-blue.png" alt="">
-                <img src="../images/produktet-fundit/razerblade-blue.png" alt="">
-                <img src="../images/produktet-fundit/iphone12-blue.png" alt="">
-            </div>
-            <!-- GoToTop -->
-            <button onclick="topFunction()" id="back-to-top" title="Go to top"><img style="width: 50px;" src="../images/arrow-circle-up-solid.svg" alt=""></button>
+    
+    <!-- Trending products static component -->
+    <?php // include '../components/trendingprod.php' ?>
+
+    <button onclick="topFunction()" id="back-to-top" title="Go to top"><img style="width: 50px;" src="../images/icons/arrow-circle-up-solid.svg" alt=""></button>
         
         <?php if(count($promotedProducts) > 0) { ?>
             <div class="section-title">
