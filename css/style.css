@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600;700&display=swap');
+
 /*
     Primary color: #00A0FF
     Seconday color: #005180
@@ -7,7 +7,7 @@
 
 /*Global*/
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     color: #323232;
