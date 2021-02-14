@@ -1,30 +1,32 @@
 <?php include '../components/header.php';
 include '../businessLogic/MessageMapper.php';
 
-    $mapper = new MessageMapper();
-    $text = $mapper->getText();
+$mapper = new MessageMapper();
+$text = $mapper->getText();
 
-    if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) 
-        && $_SESSION['is_logged_in'] == 1 && $_SESSION['role'] == 1){ 
-            if(isset($_GET['action']) && $_GET['action'] == 'edit') { ?>
-                <div class="rrethnesh-container">
-                    <div class="rrethnesh-card">
-                        <div>
-                            <h1>Rreth nesh</h1>
-                            <hr class="divider">
-                        </div>
-                        <div>
-                            <form action="../businessLogic/upload.php" method="POST">
-                                <input type="text" class="hidden" name="id" value="<?php echo $text['id'] ?>">
-                                <textarea name="text">
-                                    <?php echo $text['text']?>
+if (
+    !empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in'])
+    && $_SESSION['is_logged_in'] == 1 && $_SESSION['role'] == 1
+) {
+    if (isset($_GET['action']) && $_GET['action'] == 'edit') { ?>
+        <div class="rrethnesh-container">
+            <div class="rrethnesh-card">
+                <div>
+                    <h1>Rreth nesh</h1>
+                    <hr class="divider">
+                </div>
+                <div>
+                    <form action="../businessLogic/upload.php" method="POST">
+                        <input type="text" class="hidden" name="id" value="<?php echo $text['id'] ?>">
+                        <textarea name="text">
+                                    <?php echo $text['text'] ?>
                                 </textarea>
-                                <input type="submit" class="button" name="change-reth-nesh" value="Ruaj ndryshimet">
-                            </form>
-                        </div>
-                    </div>
+                        <input type="submit" class="button" name="change-reth-nesh" value="Ruaj ndryshimet">
+                    </form>
                 </div>
-    <?php } else  { ?>
+            </div>
+        </div>
+    <?php } else { ?>
         <div class="rrethnesh-container">
             <div class="rrethnesh-card">
                 <div>
@@ -37,18 +39,18 @@ include '../businessLogic/MessageMapper.php';
             </div>
         </div>
     <?php }
-    } else { ?>
-        <div class="rrethnesh-container">
-            <div class="rrethnesh-card">
-                <div>
-                    <h1>Rreth nesh</h1>
-                    <hr class="divider">
-                </div>
-                <div>
-                    <p><?php echo $text['text'] ?></p>
-                </div>
+} else { ?>
+    <div class="rrethnesh-container">
+        <div class="rrethnesh-card">
+            <div>
+                <h1>Rreth nesh</h1>
+                <hr class="divider">
+            </div>
+            <div>
+                <p><?php echo $text['text'] ?></p>
             </div>
         </div>
-    <?php }
+    </div>
+<?php }
 
 include '../components/footer.php'; ?>

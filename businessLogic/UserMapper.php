@@ -1,16 +1,19 @@
-<?php 
+<?php
 
 require_once "Database.php";
 
-class UserMapper extends DatabaseConfig {
+class UserMapper extends DatabaseConfig
+{
     private $connection;
     private $query;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->connection = $this->getConnection();
     }
 
-    public function insertUser($user){
+    public function insertUser($user)
+    {
         $this->query = "insert into users (first_name, last_name, email, password, is_admin) values (:firstname, :lastname, :email, :password, :role)";
         $statement = $this->connection->prepare($this->query);
         $firstname = $user->getFirstName();
@@ -26,7 +29,8 @@ class UserMapper extends DatabaseConfig {
         $statement->execute();
     }
 
-    public function getUserByID($id){
+    public function getUserByID($id)
+    {
         $this->query = "select * from users where id=:id";
         $statement = $this->connection->prepare($this->query);
         $statement->bindParam(":id", $id);
@@ -35,7 +39,8 @@ class UserMapper extends DatabaseConfig {
         return $result;
     }
 
-    public function getUserByEmail($email){
+    public function getUserByEmail($email)
+    {
         $this->query = "select * from users where email=:email";
         $statement = $this->connection->prepare($this->query);
         $statement->bindParam(":email", $email);
@@ -44,7 +49,8 @@ class UserMapper extends DatabaseConfig {
         return $result;
     }
 
-    public function getEmail($email){
+    public function getEmail($email)
+    {
         $this->query = "select email from users where email=:email";
         $statement = $this->connection->prepare($this->query);
         $statement->bindParam(":email", $email);
@@ -54,7 +60,8 @@ class UserMapper extends DatabaseConfig {
     }
 
     //Get all emails except the user whose id is given as argument
-    public function getConstraintEmail($id){
+    public function getConstraintEmail($id)
+    {
         $this->query = "select email
         from users
         where id!=:id";
@@ -65,7 +72,8 @@ class UserMapper extends DatabaseConfig {
         return $result;
     }
 
-    public function getAllUsers(){
+    public function getAllUsers()
+    {
         $this->query = "select * from users";
         $statement = $this->connection->prepare($this->query);
         $statement->execute();
@@ -73,14 +81,16 @@ class UserMapper extends DatabaseConfig {
         return $result;
     }
 
-    public function deleteUser($id){
+    public function deleteUser($id)
+    {
         $this->query = "delete from users where id=:id";
         $statement = $this->connection->prepare($this->query);
         $statement->bindParam(":id", $id);
         $statement->execute();
     }
 
-    public function edit($user, $id){
+    public function edit($user, $id)
+    {
         $this->query = "update users set first_name=:firstname, last_name=:lastname, email=:email, password=:password where id=:id";
         $statement = $this->connection->prepare($this->query);
         var_dump($user);
@@ -96,14 +106,16 @@ class UserMapper extends DatabaseConfig {
         $statement->execute();
     }
 
-    public function makeAdmin($id){
+    public function makeAdmin($id)
+    {
         $this->query = "update users set is_admin=1 where id=:id";
         $statement = $this->connection->prepare($this->query);
         $statement->bindParam(":id", $id);
         $statement->execute();
     }
 
-    public function removeAdmin($id){
+    public function removeAdmin($id)
+    {
         $this->query = "update users set is_admin = 0 where id=:id";
         $statement = $this->connection->prepare($this->query);
         $statement->bindParam(":id", $id);
