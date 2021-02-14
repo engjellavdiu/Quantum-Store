@@ -185,6 +185,13 @@ class ProductMapper extends DatabaseConfig {
         $statement->execute();
     }
 
+    public function deleteFromCategories($id){
+        $this->query = "delete from categories where emri=:id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+    }
+
     public function insertIntoSlider($image){
         $this->query = "insert into slider (image) values (:image)";
         $statement = $this->connection->prepare($this->query);

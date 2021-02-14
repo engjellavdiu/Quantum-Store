@@ -249,7 +249,7 @@
                             <td>
                                 <?php echo $msg['email']; ?>
                             </td>
-                            <td><a href="<?php echo "../businessLogic/send-message.php?action=delete&msg_id=".$msg['id']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të fshini mesazhin?');">Fshij</a></td>
+                            <td><a href="<?php echo "../businessLogic/modifications.php?action=delete-msg&msg-id=".$msg['id']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të fshini mesazhin?');">Fshij</a></td>
                             <td><a href="<?="view-message.php?action=view&msg_id=".$msg['id']?>">Lexo</a></td>
                         </tr>
                     <?php } ?>
@@ -290,7 +290,7 @@
                             <td>
                                 <?php echo $category['emri']; ?>
                             </td>
-                            <td><a href="<?php echo "../businessLogic/modify-products.php?action=delete_product&prod_id=".$product['id']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të fshini produktin?');">Fshij</a></td>
+                            <td><a href="<?php echo "../businessLogic/modifications.php?action=delete-category&category=".$category['emri']; ?>" onclick="return confirm('A jeni të sigurt që dëshironi të fshini kategorinë?');">Fshij</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>                

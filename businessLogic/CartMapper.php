@@ -51,4 +51,11 @@ class CartMapper extends DatabaseConfig {
         $statement->bindParam(":product_id", $product_id);
         $statement->execute();
     }
+
+    public function deleteUserCart($user_id){
+        $this->query = "delete from cart where user_id=:user_id";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":user_id", $user_id);
+        $statement->execute();
+    }
 }

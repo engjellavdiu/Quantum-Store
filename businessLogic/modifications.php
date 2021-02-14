@@ -66,6 +66,8 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
                 $mapper->deleteUser($_GET['user-id']);
                 header("Location: ../views/logout.php");
             }else {
+                $cartmapper = new CartMapper();
+                $cartmapper->deleteUserCart($_GET['user-id']);
                 $mapper->deleteUser($_GET['user-id']);
                 header("Location: ../views/dashboard.php?action=view-users");
             }
@@ -138,6 +140,13 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
             $cartmapper = new CartMapper();
             $cartmapper->deleteProductFromCart($_GET['product-id']);
             header("Location: ../views/shporta.php");
+        }
+    }
+    else if(isset($_GET['action']) && $_GET['action'] == "delete-category"){
+        if(isset($_GET['category'])){
+            $mapper = new ProductMapper();
+            $mapper->deleteFromCategories($_GET['category']);
+            header("Location: ../views/dashboard.php?action=add-category");
         }
     }
 }
