@@ -10,27 +10,27 @@ $mapper = new ProductMapper();
 $cmapper = new CartMapper();
 
 $products = $mapper->getAllProducts();
-if (isset($_GET['filter']) && $_GET['filter'] == 'price-low-to-high') {
+if(isset($_GET['filter']) && $_GET['filter'] == 'price-low-to-high'){
     $products = $mapper->getPriceLowToHigh();
-} else if (isset($_GET['filter']) && $_GET['filter'] == 'price-high-to-low') {
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'price-high-to-low'){
     $products = $mapper->getPriceHighToLow();
-} else if (isset($_GET['filter']) && $_GET['filter'] == 'name-A-Z') {
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'name-A-Z'){
     $products = $mapper->getNameAtoZ();
-} else if (isset($_GET['filter']) && $_GET['filter'] == 'name-Z-A') {
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'name-Z-A'){
     $products = $mapper->getNameZtoA();
-} else if (isset($_GET['filter']) && $_GET['filter'] == 'newest') {
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'newest'){
     $products = $mapper->getNewest();
-} else if (isset($_GET['filter']) && $_GET['filter'] == 'oldest') {
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'oldest'){
     $products = $mapper->getOldest();
-} else if (isset($_GET['filter']) && $_GET['filter'] == 'all') {
-    $products = $mapper->getAllProducts();
+} else if (isset($_GET['filter']) && $_GET['filter'] == 'all'){
+     $products = $mapper->getAllProducts();
 } else {
     $products = $mapper->getAllProducts();
 }
-?>
+?>  
 <main id="main">
     <div id="product-filter">
-        <form method="GET" action="<?= $_SERVER['PHP_SELF'] ?>">
+        <form method="GET" action="<?= $_SERVER['PHP_SELF']?>">
             <select name="filter">
                 <option value="all">Të gjitha</option>
                 <option value="price-low-to-high">Cmimi: poshtë-lart</option>
@@ -43,24 +43,25 @@ if (isset($_GET['filter']) && $_GET['filter'] == 'price-low-to-high') {
             <input type="submit" value="Filtro">
         </form>
     </div>
-    <div class="products-container">
-        <div class="products-panel wrapper">
-            <?php foreach ($products as $product) {
-                $pid = $product['id'];
-            ?>
-                <input class="hidden" type="text" name="product_id" value=<?php $pid; ?>>
-                <div class="square">
-                    <div>
-                        <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
+        <div class="products-container"> 
+            <div class="products-panel wrapper">
+                <?php foreach($products as $product){
+                    $pid = $product['id'];
+                ?>
+                <input class="hidden" type="text" name="product_id" value=<?php $pid; ?>> 
+                    <div class="square">
+                        <div>
+                            <a href="<?php echo "view-product.php?pid=$pid" ?>"><img src=<?php echo $product['image']; ?> alt=""></a>
+                        </div>
+                        <div>
+                            <h3><?php echo $product['emri']; ?></h3>
+                            <h2><?php echo $product['cmimi']; ?>&euro;</h2>
+                            <a class="button" href="<?php echo "view-product.php?pid=$pid" ?>">Shiko Produktin</a>
+                        </div>
                     </div>
-                    <div>
-                        <h3><?php echo $product['emri']; ?></h3>
-                        <h2><?php echo $product['cmimi']; ?>&euro;</h2>
-                        <a class="button" href="<?php echo "view-product.php?pid=$pid" ?>">Shiko Produktin</a>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
+                <?php } ?>
+            </div>
     </div>
 </main>
-<?php include '../components/footer.php' ?>
+<?php include '../components/footer.php'?>
+

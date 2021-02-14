@@ -1,7 +1,6 @@
 <?php
 
-class Product
-{
+class Product{
     private $emri;
     private $cmimi;
     private $pershkrimi;
@@ -11,49 +10,40 @@ class Product
     private $admin;
     private $prodhuesi;
 
-    public function __construct($emri, $cmimi, $pershkrimi, $sasia, $kategoria, $image, $admin_id, $prodhuesi)
-    {
-        $this->emri = $emri;
+    public function __construct($emri, $cmimi, $pershkrimi,$sasia,$kategoria,$image, $admin_id, $prodhuesi){
+        $this->emri=$emri;
         $this->cmimi = $cmimi;
-        $this->pershkrimi = $pershkrimi;
-        $this->sasia = $sasia;
-        $this->kategoria = $kategoria;
-        $this->image = $image;
+        $this->pershkrimi=$pershkrimi;
+        $this->sasia=$sasia;
+        $this->kategoria=$kategoria;
+        $this->image=$image;
         $this->admin = $admin_id;
         $this->prodhuesi = $prodhuesi;
     }
 
-    public function getEmri()
-    {
+    public function getEmri(){
         return $this->emri;
     }
 
-    public function getCmimi()
-    {
+    public function getCmimi(){
         return $this->cmimi;
     }
-    public function getPershkrimi()
-    {
+    public function getPershkrimi(){
         return $this->pershkrimi;
     }
-    public function getSasia()
-    {
+    public function getSasia(){
         return $this->sasia;
     }
-    public function getKategoria()
-    {
+    public function getKategoria(){
         return $this->kategoria;
     }
-    public function getImage()
-    {
+    public function getImage(){
         return $this->image;
     }
-    public function getAdminId()
-    {
+    public function getAdminId(){
         return $this->admin;
     }
-    public function getProdhuesi()
-    {
+    public function getProdhuesi(){
         return $this->prodhuesi;
     }
 }
