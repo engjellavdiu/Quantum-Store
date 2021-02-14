@@ -145,6 +145,7 @@ if(!empty($_SESSION['is_logged_in']) && isset($_SESSION['is_logged_in']) && $_SE
     else if(isset($_GET['action']) && $_GET['action'] == "delete-category"){
         if(isset($_GET['category'])){
             $mapper = new ProductMapper();
+            $mapper->deleteProductsWithCategory($_GET['category']);
             $mapper->deleteFromCategories($_GET['category']);
             header("Location: ../views/dashboard.php?action=add-category");
         }

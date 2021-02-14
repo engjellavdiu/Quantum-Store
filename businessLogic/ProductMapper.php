@@ -192,6 +192,13 @@ class ProductMapper extends DatabaseConfig {
         $statement->execute();
     }
 
+    public function deleteProductsWithCategory($category){
+        $this->query = "delete from products where kategoria=:category";
+        $statement = $this->connection->prepare($this->query);
+        $statement->bindParam(":category", $category);
+        $statement->execute();
+    }
+
     public function insertIntoSlider($image){
         $this->query = "insert into slider (image) values (:image)";
         $statement = $this->connection->prepare($this->query);
